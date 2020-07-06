@@ -1,12 +1,12 @@
 import React from 'react';
 
-// import './footer.sass';
+import './footer.scss';
 
 export default function Footer() {
     
     return(
       <footer>
-        <h1>ATTN Productions</h1>
+        <h2>ATTN Productions</h2>
         
       </footer>
     );

@@ -7,13 +7,14 @@ export default function Header() {
     
     return(
       <header>
-        <h1>Developing You</h1>
+        <span class="header-container">
+          <h1>Developing You</h1>
+          <button>Log in</button>
+        </span>
         <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/Goals">Goals</a></li>
-            <li><a href="/About">About</a></li>
-          </ul>
+          <a href="/">Home</a>
+          <a href="/Goals">Goals</a>
+          <a href="/About">About</a>
         </nav>
       </header>
     );
