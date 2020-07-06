@@ -1,0 +1,26 @@
+.header-container {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    padding-left: 45px;
+    color: #1e496d;
+}
+
+button {
+    // margin-right: -40px;
+    align-self: flex-start;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    color: #5e6a74;
+}
+
+header {
+    color: black;
+    text-align: center;
+}
