@@ -1,6 +1,8 @@
 import React from 'react';
 import { AuthContext } from '../../contexts/auth';
 import '../../index.scss';
+import GoalDetails from '../../goaldetails/index';
+
 
 
 
@@ -30,21 +32,25 @@ export default class Login extends React.Component {
       return (
         <h1>
           Welcome back, {user.userName}!
+          <GoalDetails />
+          <form onSubmit={this.logoutSubmit}>
+            <button>Log Out</button>
+          </form>
         </h1>
         );
     }
 
     return (
       
-      <form class="login-form" onSubmit={this.handleSubmit}>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h3>Log in to start working on your goals!</h3>
-        <input class="login-username" placeholder="Username" name="username" />
+        <input className="login-username" placeholder="Username" name="username" />
         <br />
         <br />
-        <input class="login-password" placeholder="Password" type="password" name="password" />
+        <input className="login-password" placeholder="Password" type="password" name="password" />
         <br />
         <br />
-        <button class="login-button">Log In</button>
+        <button className="login-button">Log In</button>
       </form>
     )
   }

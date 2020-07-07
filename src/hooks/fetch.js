@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react';
+import useAuth from '../contexts/auth'
 
 function useFetch(url) {
     const [data, setData] = useState(null);
+    const { user } = useAuth();
 
     useEffect(() => {
         async function goFetch(){
-            let response = await fetch(url);
+            let options = { headers: {} };
+            if (user) {
+                options.headers['Authorization'] = `Bearer ${user.token}`;
+            }
+
+            let response = await fetch(url, options);
             let json = await response.json();
             setData(json);
         }
 
         goFetch();
-    }, [url]);
+    }, [url, user]);
 
-    return [
+    return {
         data,
-    ];
+    };
 }
 
 export default useFetch;
