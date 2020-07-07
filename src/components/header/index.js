@@ -3,11 +3,16 @@ import React from 'react';
 import './header.scss';
 import { faUser, faCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useTheme from '../../contexts/theme.js'
+
 
 export default function Header() {
+
+  const theme = useTheme();
     
     return(
-      <header>
+      <header className={theme.mode}>
+          <button onClick={() => theme.toggleMode()}>{theme.mode} mode</button>
           <div className="account-bar">
           <span className="user-icon"><FontAwesomeIcon icon={faUser} /></span>
           <span className="settings-icon"><FontAwesomeIcon icon={faCog} /></span>
