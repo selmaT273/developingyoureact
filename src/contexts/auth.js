@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import jwt from 'jsonwebtoken';
 import cookie from 'react-cookies';
 
-const usersAPI = 'https://developingyouapi.azurewebsites.net/api-users/';
+const usersAPI = 'https://developingyouapi.azurewebsites.net/api/users';
 
 export const AuthContext = React.createContext();
 
@@ -24,7 +24,7 @@ export default function useAuth() {
     }
 
     login = async (username, password) => {
-        const result = await fetch(`${usersAPI}/Login`, {
+        const result = await fetch(`${usersAPI}/login`, {
           method: 'post',
           headers: {
             'Content-Type': 'application/json',
