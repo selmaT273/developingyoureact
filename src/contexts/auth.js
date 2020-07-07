@@ -68,4 +68,19 @@ export default function useAuth() {
         }
       }
 
+      componentDidMount() {
+        const cookieToken = cookie.load('auth');
+        if (cookieToken) console.log('Found auth cookie!');
+    
+        this.processToken(cookieToken);
+      }
+    
+      render() {
+        return (
+          <AuthContext.Provider value={this.state}>
+            {this.props.children}
+          </AuthContext.Provider>
+        );
+      }
+
 }
