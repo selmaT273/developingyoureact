@@ -23,7 +23,7 @@ export class ThemeProvider extends React.Component {
         return (
             <ThemeContext.Provider value= {this.state}>
                 {this.props.children}
-                </ThemeContext.Provider>
+            </ThemeContext.Provider>
         )
     }
 }
