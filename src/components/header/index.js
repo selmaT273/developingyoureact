@@ -1,5 +1,6 @@
 import React from 'react';
 // import link from 'react-router-dom';
+import Login from '../auth/login';
 
 import './header.scss';
 
@@ -9,7 +10,7 @@ export default function Header() {
       <header>
         <span class="header-container">
           <h1>Developing You</h1>
-          <button>Log in</button>
+          <Login />
         </span>
         <nav>
           <a href="/">Home</a>
