@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthContext } from '../../contexts/auth';
-
+import '../../index.scss';
 
 
 
@@ -38,10 +38,16 @@ export default class Login extends React.Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input placeholder="Username" name="username" />
-        <input placeholder="Password" type="password" name="password" />
-        <button>Log In</button>
+      
+      <form class="login-form" onSubmit={this.handleSubmit}>
+        <h3>Log in to start working on your goals!</h3>
+        <input class="login-username" placeholder="Username" name="username" />
+        <br />
+        <br />
+        <input class="login-password" placeholder="Password" type="password" name="password" />
+        <br />
+        <br />
+        <button class="login-button">Log In</button>
       </form>
     )
   }
