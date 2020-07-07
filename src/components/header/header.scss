@@ -1,17 +1,20 @@
-.header-container {
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-
 h1 {
-    padding-left: 45px;
     color: #1e496d;
 }
 
-button {
-    // margin-right: -40px;
-    align-self: flex-start;
+.account-bar {
+    margin-top: 5px;
+    height: 2px;
+    margin-left: 350px;
+}
+
+.user-icon {
+    color: #5e6a74;
+    padding-right: 7px;
+}
+
+.settings-icon{
+    color: #5e6a74;
 }
 
 a {
