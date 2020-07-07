@@ -51,11 +51,13 @@ export default function useAuth() {
           const payload = jwt.decode(token);
           if (payload) {
             if (!user) {
+              console.log(payload)
               user = {
                 id: payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'],
-                username: payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
+                userName: payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
               };
             }
+            console.log(user);
     
             this.setState({
               user,
