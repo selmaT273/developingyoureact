@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import jwt from 'jsonwebtoken';
 import cookie from 'react-cookies';
 
-
+const usersAPI = 'https://developingyouapi.azurewebsites.net/api-users/';
 
 export default function useAuth() {
     return useContext(AuthContext);
@@ -70,8 +70,6 @@ export default function useAuth() {
 
       componentDidMount() {
         const cookieToken = cookie.load('auth');
-        if (cookieToken) console.log('Found auth cookie!');
-    
         this.processToken(cookieToken);
       }
     
