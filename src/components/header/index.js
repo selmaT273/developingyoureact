@@ -8,10 +8,10 @@ export default function Header() {
     
     return(
       <header>
-          <div class="account-bar">
-          <a href=""><FontAwesomeIcon icon={faUser} /></a>
-          <a href=""><FontAwesomeIcon icon={faCog} /></a>
-          <a href=""><FontAwesomeIcon icon={faSignOutAlt} /></a>
+          <div className="account-bar">
+          <span className="user-icon"><FontAwesomeIcon icon={faUser} /></span>
+          <span className="settings-icon"><FontAwesomeIcon icon={faCog} /></span>
+          <a href="/Logout"><FontAwesomeIcon icon={faSignOutAlt} /></a>
           </div>
           <h1>Developing You</h1>
         <nav>
