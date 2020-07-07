@@ -1,8 +1,11 @@
 import React from 'react';
-// import link from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './header.scss';
 import { faUser, faCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// import Goals from '../../goals/index';
+
 import useTheme from '../../contexts/theme.js'
 
 
@@ -21,7 +24,7 @@ export default function Header() {
           <h1>Developing You</h1>
         <nav>
           <a href="/">Home</a>
-          <a href="/Goals">Goals</a>
+          <NavLink exact to="/Goals">Goals</NavLink>
           <a href="/About">About</a>
         </nav>
       </header>
