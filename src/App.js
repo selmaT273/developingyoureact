@@ -4,7 +4,7 @@ import Goals from './goals/index';
 import Header from './components/header';
 import Footer from './components/footer';
 import Login from './components/auth/login';
-import Home from './home/index';
+// import Home from './home/index';
 
 function App() {
   // const { mode } = useTheme();

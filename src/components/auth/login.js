@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthContext } from '../../contexts/auth';
 import '../../index.scss';
-import GoalDetails from '../../goaldetails/index';
+// import GoalDetails from '../../goaldetails/index';
 
 
 

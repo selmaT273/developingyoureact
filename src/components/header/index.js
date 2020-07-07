@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './header.scss';
 import { faUser, faCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Goals from '../../goals/index';
+// import Goals from '../../goals/index';
 
 export default function Header() {
 
