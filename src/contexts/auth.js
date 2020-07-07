@@ -4,6 +4,8 @@ import cookie from 'react-cookies';
 
 const usersAPI = 'https://developingyouapi.azurewebsites.net/api-users/';
 
+export const AuthContext = React.createContext();
+
 export default function useAuth() {
     return useContext(AuthContext);
   }
@@ -68,10 +70,10 @@ export default function useAuth() {
         }
       }
 
-      componentDidMount() {
-        const cookieToken = cookie.load('auth');
-        this.processToken(cookieToken);
-      }
+       componentDidMount() {
+         const cookieToken = cookie.load('auth');
+         this.processToken(cookieToken);
+       }
     
       render() {
         return (
