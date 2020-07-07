@@ -21,6 +21,27 @@ export default function useAuth() {
       };
     }
 
-    
+    login = async (username, password) => {
+        const result = await fetch(`${usersAPI}/Login`, {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password }),
+        });
+        const body = await result.json();
+        if (result.ok){
+          if (this.processToken(body.token, body)){
+            return result.ok;
+          }
+        }
+        this.logout();
+        return result.ok;
+      }
+
+      logout = () => {
+        this.setState({ user: null, permissions: [] });
+        cookie.remove('auth');
+      }
 
 }
