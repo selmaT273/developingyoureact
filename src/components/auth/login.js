@@ -29,7 +29,7 @@ export default class Login extends React.Component {
     if (user) {
       return (
         <h1>
-          Welcome back, {user.username}!
+          Welcome back, {user.userName}!
           <form onSubmit={this.logoutSubmit}>
             <button>Log Out</button>
           </form>
