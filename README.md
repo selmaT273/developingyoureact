@@ -4,8 +4,12 @@ Developing You is a guided behavioral modification app that helps make the journ
 # Project Status
 This project is currently in development.
 
-# Planning
+# Deployment
+This repository is currently deployed with Netlify [here](https://vibrant-varahamihira-0ebf26.netlify.app/).
 
+The API for this project is currently deployed with Azure [here](https://developingyouapi.azurewebsites.net/).
+
+# Planning
 ## Wireframes
 - [Home](readme-images/DevYouHome.png)
 - [Goals](readme-images/DevYouGoals.png)
@@ -18,7 +22,6 @@ This project is currently in development.
 [ERD](readme-images/DevYouERD.jpg)
 
 # Installation and Setup Instructions
-
 After cloning down this repository, you will need to install npm, node sass, and recharts on your machine.
 
 ## Node Package Manager Installation:
@@ -40,3 +43,4 @@ After cloning down this repository, you will need to install npm, node sass, and
 ## Recharts Installation: 
 
 ### `npm install recharts`
+
