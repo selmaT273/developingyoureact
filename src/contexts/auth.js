@@ -44,4 +44,28 @@ export default function useAuth() {
         cookie.remove('auth');
       }
 
+      processToken(token, user) {
+        try {
+          const payload = jwt.decode(token);
+          if (payload) {
+            if (!user) {
+              user = {
+                id: payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'],
+                username: payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
+              };
+            }
+    
+            this.setState({
+              user,
+              permissions: payload.permissions || [],
+            });
+            cookie.save('auth', token);
+            return true;
+          }
+        } catch(e){
+          console.warn(e);
+          this.logout();
+        }
+      }
+
 }
