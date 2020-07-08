@@ -1,12 +1,20 @@
 import React from 'react';
 
 export default class CreateGoal extends React.Component{
+    constructor(props){
+        super(props);
+
+    }
+
+    handleSubmit(){
+
+    }
 
     render(){
         return (
             <>
                 <h3>Create Your Goal!</h3>
-                <form onSubmit={""}>
+                <form onSubmit={this.handleSubmit}>
                     <label for="goal-title">Title: </label>
                     <input 
                         name="goal-title" 
