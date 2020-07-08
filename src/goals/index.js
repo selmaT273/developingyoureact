@@ -1,6 +1,7 @@
 import React from 'react';
 import ProgressBar from '../charts/progressbar';
 import useFetch from '../hooks/fetch';
+import './goals.scss';
 
 export default function Goals(props) {
     const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
@@ -23,13 +24,13 @@ export default function Goals(props) {
                     Start Date
                 </td>
                 <td>
-                    EndDate
+                    End Date
                 </td>
                 <td>
                     Category
                 </td>
                 <td>
-                    Completion Status
+                    Active
                 </td>
             </thead>
             <tbody>
