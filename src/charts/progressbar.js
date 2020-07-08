@@ -22,8 +22,8 @@ export default function ProgressBar(props){
             height={circleSize}
             cx={circleSize / 2}
             cy={circleSize / 2}
-            innerRadius={12}
-            outerRadius={18}
+            innerRadius={70}
+            outerRadius={200}
             barSize={2}
             data={data}
             startAngle={90}
@@ -37,10 +37,12 @@ export default function ProgressBar(props){
             />
             <RadialBar
             background
+            minPointSize={3}
+            barSize={10}
             clockWise
             dataKey="value"
             cornerRadius={circleSize / 2}
-            fill="#82ca9d"
+            fill="#CFE4F5"
             />
             <text
             x={circleSize / 2}
