@@ -46,7 +46,7 @@ export default function Goals(props) {
         </table>
         <div className="progress-bar">
             {data.map((goal) => (
-                <ProgressBar progressBar={data} />
+                <ProgressBar goal={goal} />
             ))}
         </div>
         </>
