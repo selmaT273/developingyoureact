@@ -3,11 +3,20 @@ import React from 'react';
 export default class CreateGoal extends React.Component{
     constructor(props){
         super(props);
+        let today = new Date().toLocaleString();
+
+        this.date = today;
 
     }
 
-    handleSubmit(){
+    handleSubmit(event){
+        event.preventDefault();
+        const data = new FormData(event.target);
 
+        fetch('https://developingyouapi.azurewebsites.net/api/goals', {
+            method: 'POST',
+            body: data,
+        });
     }
 
     render(){
@@ -24,7 +33,8 @@ export default class CreateGoal extends React.Component{
                     <label for="start-date">Start Date: </label>
                     <input 
                         name="start-date" 
-                        type="datetime-local" />
+                        type="datetime-local"
+                        value={this.date} />
     
                     <label for="end-date">End Date: </label>
                     <input 
