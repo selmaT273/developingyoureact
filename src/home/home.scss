@@ -1,6 +1,14 @@
 .snapshot-container {
-    border: solid black 1px;
-    margin: 5px;
+    border: solid #5e6a74 1px;
+    border-radius: 5px;
+    background-color: #FFEDEE;
+    margin-bottom: 15px;
     padding-left: 10px;
     padding-bottom: 40px;
+    height: 200px;
+    box-shadow: 2px 3px 3px #5e6a74;
+}
+
+h2 {
+    color: #5e6a74;
 }

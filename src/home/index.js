@@ -12,6 +12,7 @@ export default function Home(props){
 
         return (
             <div className="home-container">
+                <h1>Active Goals</h1>
                 {data.map((goal) => (        
                     <div key={goal.id} className="snapshot-container">       
                     <h2 key={goal.id}> {goal.title}</h2>
