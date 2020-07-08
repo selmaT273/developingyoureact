@@ -1,26 +1,63 @@
 import React from 'react';
+import useAuth from '../contexts/auth';
+
 
 const CreateInstance = (props) => {
     const {goal, onClose} = props;
+    const {user} = useAuth();
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const {startTime, endTime, comment} = e.target.elements;
+
+        const instance = {
+            startTime: startTime.value,
+            endTime: endTime.value,
+            comment: comment.value
+        }
+
+        console.log(instance);
+    
+      const response = await fetch(`https://developingyouapi.azurewebsites.net/api/goals/${goal.id}/instances`, {
+            method: 'POST',
+            headers:{
+                 'Content-Type': 'application/json',
+                 'Authorization': `Bearer ${user.token}`
+                },
+            body: JSON.stringify(instance),
+        })
+        if(response.ok){
+            onClose(); 
+            return;
+        }
+        else{
+            alert('Instance did not post')
+        }
+        
+        
+
+        
+
+    
+    }
 
 return (
     <div> <h2>{goal.title}</h2> <button onClick={onClose}>x</button>
         <div>
-            <form onSubmit={""}>
+            <form onSubmit={handleSubmit}>
 
                <label > 
                    Start Time:
-               <input className= "startTime" type="datetime-local"/>
+               <input name= "startTime"  type="datetime-local"/>
                </label>
 
                <label > 
                    End Time:
-               <input className= "endTime" type="datetime-local"/>
+               <input name= "endTime" type="datetime-local"/>
                </label>
 
                <label > 
                   Comment(s):
-               <input className= "comment" type="text"/>
+               <input name= "comment" type="text"/>
                </label>
 
             
