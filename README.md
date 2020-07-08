@@ -22,7 +22,7 @@ The API for this project is currently deployed with Azure [here](https://develop
 [ERD](readme-images/DevYouERD.jpg)
 
 # Installation and Setup Instructions
-After cloning down this repository, you will need to install npm, node sass, and recharts on your machine.
+After cloning down this repository, you will need to install the following dependencies: 
 
 ## Node Package Manager Installation:
 
@@ -43,4 +43,20 @@ After cloning down this repository, you will need to install npm, node sass, and
 ## Recharts Installation: 
 
 ### `npm install recharts`
+
+## Font Awesome Installation:
+
+### `npm install --save @fortawesome/fontawesome-svg-core`
+### `npm install --save @fortawesome/free-solid-svg-icons`
+### `npm install --save @fortawesome/react-fontawesome`
+
+## React Cookies Installation:
+
+### `npm install react-cookies`
+
+## React DOM
+
+## React Router DOM
+
+## JSON Web Token
 
