@@ -50,6 +50,12 @@ export default function useAuth() {
         try {
           const payload = jwt.decode(token);
           if (payload) {
+            if (payload.exp * 1000 < Date.now()){
+              console.log('token expired');
+              this.logout();
+              return false;
+            }
+            
             if (!user) {
               console.log(payload)
               user = {

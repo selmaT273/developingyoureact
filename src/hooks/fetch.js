@@ -6,6 +6,10 @@ function useFetch(url) {
     const { user } = useAuth();
 
     useEffect(() => {
+        if (!user){
+            return;
+        }
+
         async function goFetch(){
             let options = { headers: {} };
             if (user) {
