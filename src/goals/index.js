@@ -12,19 +12,36 @@ export default function Goals(props) {
     console.log(data);
 
     return (
-        <ul>
+        <table>
+            <thead>
+                <td>
+                    Goal Name
+                </td>
+                <td>
+                    Start Date
+                </td>
+                <td>
+                    EndDate
+                </td>
+                <td>
+                    Category
+                </td>
+                <td>
+                    Completion Status
+                </td>
+            </thead>
+            <tbody>
             {data.map((goal) => (               
-                <li key={goal.id}>
-                    {goal.title} {goal.startDate}
-                    <ul>
-                    {goal.instances.map((instance) => (
-                    <li key={instance.id}>{instance.startTime}  {instance.comment}</li>
-                    ))}
-                    </ul>
-                </li>        
+                <tr key={goal.id}>
+                    <td>{goal.title}</td>
+                    <td>{goal.startDate}</td>
+                    <td>{goal.endDate}</td>
+                    <td>{goal.category}</td>
+                    <td>{goal.completed.toString()}</td>
+                </tr>        
             ))}
-
-        </ul>
+            </tbody>
+        </table>
         
     )
 }
