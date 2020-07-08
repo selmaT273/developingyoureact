@@ -1,6 +1,9 @@
 import React from 'react';
+import { AuthContext } from '../contexts/auth';
 
 export default class CreateGoal extends React.Component{
+    static contextType = AuthContext;
+
     constructor(props){
         super(props);
         let today = new Date().toLocaleString();
@@ -9,13 +12,27 @@ export default class CreateGoal extends React.Component{
 
     }
 
-    handleSubmit(event){
+    handleSubmit = event => {
         event.preventDefault();
-        const data = new FormData(event.target);
+        const { goalTitle, startDate, endDate, startValue, targetValue } = event.target.elements;
+        const { user } = this.context;
+        const goal = {
+            title: goalTitle.value,
+            startDate: startDate.value,
+            endDate: endDate.value,
+            startValue: parseInt(startValue.value),
+            targetValue: parseInt(targetValue.value),
+        };
+
+        console.log(goal);
 
         fetch('https://developingyouapi.azurewebsites.net/api/goals', {
             method: 'POST',
-            body: data,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+            },
+            body: JSON.stringify(goal),
         });
     }
 
@@ -24,39 +41,41 @@ export default class CreateGoal extends React.Component{
             <>
                 <h3>Create Your Goal!</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="goal-title">Title: </label>
+                    <label for="goalTitle">Title: 
                     <input 
-                        name="goal-title" 
-                        placeholder="Goal title" 
-                        onChange={""} />
+                        name="goalTitle" 
+                        placeholder="Goal title" />
+                    </label>
     
-                    <label for="start-date">Start Date: </label>
+                    <label for="startDate">Start Date: 
                     <input 
-                        name="start-date" 
-                        type="datetime-local"
-                        value={this.date} />
-    
-                    <label for="end-date">End Date: </label>
-                    <input 
-                        name="end-date" 
+                        name="startDate" 
                         type="datetime-local" />
+                    </label>
     
-                    <label for="start-value">Start Value: </label>
+                    <label for="endDate">End Date: 
                     <input 
-                        name="start-value" 
-                        placeholder="What's your current rate?" 
-                        onChange={""} />
+                        name="endDate" 
+                        type="datetime-local" />
+                    </label>
     
-                    <label for="target-value">Target Value: </label>
+                    <label for="startValue">Start Value: 
                     <input 
-                        name="target-value" 
-                        placeholder="What's your desired rate?" 
-                        onChange={""} />
+                        name="startValue" 
+                        placeholder="What's your current rate?" />
+                    </label>
     
-                    <select>
+                    <label for="targetValue">Target Value: 
+                    <input 
+                        name="targetValue" 
+                        placeholder="What's your desired rate?" />
+                    </label>
+    
+                    <select name="category">
     
                     </select>
     
+                    <button>Create</button>
                 </form>
             </>
         )
