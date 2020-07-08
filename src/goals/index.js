@@ -12,6 +12,9 @@ export default function Goals(props) {
     }
     console.log(data);
 
+    const noramlizedDate = Date(data.startDate);
+    console.log(noramlizedDate);
+    
     return (
         <>
 
@@ -37,7 +40,7 @@ export default function Goals(props) {
             {data.map((goal) => (               
                 <tr key={goal.id}>
                     <td>{goal.title}</td>
-                    <td>{goal.startDate}</td>
+                    <td>{Date(goal.startDate)}</td>
                     <td>{goal.endDate}</td>
                     <td>{goal.category}</td>
                     <td>{goal.completed.toString()}</td>
