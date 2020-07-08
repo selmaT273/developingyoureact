@@ -10,6 +10,7 @@ export default function GoalDetails(props) {
     }
 
     return (
+        <>
         <h1>{goal.title}</h1>
         <ul>
             <li>{goal.startDate}</li>
@@ -25,5 +26,6 @@ export default function GoalDetails(props) {
                 </li>
             ))}
         </ul>
+        </>
     )
 }
