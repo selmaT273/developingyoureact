@@ -8,7 +8,7 @@ import useTheme from './contexts/theme';
 import Header from './components/header';
 import Footer from './components/footer';
 import Login from './components/auth/login';
-// import Home from './home/index';
+import Home from './home/index';
 
 function App() {
   const { mode } = useTheme();
@@ -19,9 +19,9 @@ function App() {
       <Header />
       <Login />
       <Switch>
-        {/* <Route exact path="/">
+        <Route exact path="/">
           <Home />
-        </Route> */}
+        </Route>
         <Route exact path="/Goals">
           <Goals />
         </Route>
