@@ -29,12 +29,17 @@ export default function CreateGoal(props){
                     name="start-value" 
                     placeholder="What's your current rate?" 
                     onChange={""} />
-                    
+
                 <label for="target-value">Goal Value: </label>
                 <input 
                     name="target-value" 
                     placeholder="What's your desired rate?" 
                     onChange={""} />
+
+                <select>
+                    
+                </select>
+
             </form>
         </>
     )
