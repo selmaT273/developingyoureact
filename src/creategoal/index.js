@@ -12,11 +12,24 @@ export default function CreateGoal(props){
                     name="goal-title" 
                     placeholder="Goal title" 
                     onChange={""} />
+
+                <label for="start-date">Start Date: </label>
+                <input 
+                    name="start-date" 
+                    type="datetime-local"
+                    value={props.datetime} />
+
+                <label for="end-date">Start Date: </label>
+                <input 
+                    name="end-date" 
+                    type="datetime-local" />
+
                 <label for="start-value">Start Value: </label>
                 <input 
                     name="start-value" 
                     placeholder="What's your current rate?" 
                     onChange={""} />
+                    
                 <label for="target-value">Goal Value: </label>
                 <input 
                     name="target-value" 
