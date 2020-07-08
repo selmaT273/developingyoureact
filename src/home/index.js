@@ -33,6 +33,5 @@ export default function Home(props){
                 {currentGoal && 
                 <CreateInstance goal={currentGoal} onClose={()=> setCurrentGoal(null)} />}
             </div>
-            
         )
 }
