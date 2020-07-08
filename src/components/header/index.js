@@ -15,7 +15,7 @@ export default function Header() {
     
     return(
       <header className={theme.mode}>
-          <button onClick={() => theme.toggleMode()}>{theme.mode} mode</button>
+          {/* <button onClick={() => theme.toggleMode()}>{theme.mode} mode</button> */}
           <div className="account-bar">
           <span className="user-icon"><FontAwesomeIcon icon={faUser} /></span>
           <span className="settings-icon"><FontAwesomeIcon icon={faCog} /></span>
