@@ -7,19 +7,19 @@ export default function CreateGoal(props){
         <>
             <h3>Create Your Goal!</h3>
             <form onSubmit={""}>
-                <label>Title: </label>
+                <label for="goal-title">Title: </label>
                 <input 
-                    name="title" 
+                    name="goal-title" 
                     placeholder="Goal title" 
                     onChange={""} />
-                <label>Start Value: </label>
+                <label for="start-value">Start Value: </label>
                 <input 
-                    name="startValue" 
+                    name="start-value" 
                     placeholder="What's your current rate?" 
                     onChange={""} />
-                <label>Goal Value: </label>
+                <label for="target-value">Goal Value: </label>
                 <input 
-                    name="endValue" 
+                    name="target-value" 
                     placeholder="What's your desired rate?" 
                     onChange={""} />
             </form>
