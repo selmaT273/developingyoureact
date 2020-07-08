@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Modal = props => {
+const CreateInstance = (props) => {
+    const {goal, onClose} = props;
+
 return (
-    <div>
+    <div> <h2>{goal.title}</h2> <button onClick={onClose}>x</button>
         <div>
             <form onSubmit={""}>
 
@@ -21,7 +23,7 @@ return (
                <input className= "comment" type="text"/>
                </label>
 
-               
+            
             <label>
             <input type="submit" value="Add New Instance"/>
             </label>
@@ -31,3 +33,5 @@ return (
 )
 
 }
+
+export default CreateInstance;
