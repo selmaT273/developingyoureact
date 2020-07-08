@@ -1,6 +1,7 @@
 import React from 'react';
-
+import ProgressBar from '../charts/progressbar';
 import useFetch from '../hooks/fetch';
+import './goals.scss';
 
 export default function Goals(props) {
     const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
@@ -11,8 +12,13 @@ export default function Goals(props) {
     }
     console.log(data);
 
+    const noramlizedDate = Date(data.startDate);
+    console.log(noramlizedDate);
+    
     return (
-        <table>
+        <>
+
+        <table className="goals-table">
             <thead>
                 <td>
                     Goal Name
@@ -21,20 +27,20 @@ export default function Goals(props) {
                     Start Date
                 </td>
                 <td>
-                    EndDate
+                    End Date
                 </td>
                 <td>
                     Category
                 </td>
                 <td>
-                    Completion Status
+                    Active
                 </td>
             </thead>
             <tbody>
             {data.map((goal) => (               
                 <tr key={goal.id}>
                     <td>{goal.title}</td>
-                    <td>{goal.startDate}</td>
+                    <td>{Date(goal.startDate)}</td>
                     <td>{goal.endDate}</td>
                     <td>{goal.category}</td>
                     <td>{goal.completed.toString()}</td>
@@ -42,6 +48,11 @@ export default function Goals(props) {
             ))}
             </tbody>
         </table>
-        
+        <div className="progress-bar">
+            {data.map((goal) => (
+                <ProgressBar goal={goal} />
+            ))}
+        </div>
+        </>
     )
 }
