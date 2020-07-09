@@ -3,7 +3,7 @@ import { RadialBarChart, PolarAngleAxis, RadialBar } from 'recharts';
 
 
 export default function ProgressBar(props){
-    const circleSize = 300;
+    const circleSize = 100;
     const { goal } = props;
     console.log(goal);
     const startDate = new Date(goal.startDate);
@@ -23,7 +23,7 @@ export default function ProgressBar(props){
             cx={circleSize / 2}
             cy={circleSize / 2}
             innerRadius={70}
-            outerRadius={200}
+            outerRadius={40}
             barSize={2}
             data={data}
             startAngle={90}
