@@ -5,7 +5,7 @@ import './footer.scss';
 export default function Footer() {
     
     return(
-        <footer class="footer">
+        <footer className="footer">
           <h2>ATTN Productions</h2>
           
         </footer>

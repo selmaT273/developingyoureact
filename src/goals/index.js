@@ -2,6 +2,8 @@ import React from 'react';
 import useFetch from '../hooks/fetch';
 import './goals.scss';
 import CreateGoal from '../creategoal';
+import {  Link } from 'react-router-dom';
+
 
 export default function Goals(props) {
     const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
@@ -18,6 +20,7 @@ export default function Goals(props) {
     return (
         <>
         <CreateGoal />
+        <h3>Goals</h3>
         <table className="goals-table">
             <thead>
                 <td>
@@ -39,7 +42,7 @@ export default function Goals(props) {
             <tbody>
             {data.map((goal) => (               
                 <tr key={goal.id}>
-                    <td>{goal.title}</td>
+                    <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
                     <td>{Date(goal.startDate)}</td>
                     <td>{goal.endDate}</td>
                     <td>{goal.category}</td>

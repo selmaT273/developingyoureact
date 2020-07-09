@@ -14,14 +14,11 @@ export default function GoalDetails(props) {
         return <p> Not Found </p>
     }
 
-    // console.log(data);
-
-    // return(
-    //     <h1>hi</h1>
-    // )
-
     return (
         <>
+        <h3>
+            Details
+        </h3>
                 <table className="goaldetails-table">
                 <thead>
                     <td>
@@ -73,6 +70,6 @@ export default function GoalDetails(props) {
                 </tbody>
         </table>
         </>
-        
+
     )
 }
