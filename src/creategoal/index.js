@@ -6,10 +6,10 @@ export default class CreateGoal extends React.Component{
 
     constructor(props){
         super(props);
-        let today = new Date().toLocaleString();
 
-        this.date = today;
-
+        this.state = {
+            
+        }
     }
 
     handleSubmit = event => {
