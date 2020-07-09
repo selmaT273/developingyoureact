@@ -41,8 +41,8 @@ export default function GoalDetails(props) {
                 <tbody>         
                 <tr key={data.id}>
                     <td>{data.title}</td>
-                    <td>{Date(data.startDate)}</td>
-                    <td>{Date(data.endDate)}</td>
+                    <td>{Date(data.startDate).slice(0, 15)}</td>
+                    <td>{Date(data.endDate).slice(0, 15)}</td>
                     <td>{data.category}</td>
                     <td>{data.completed.toString()}</td>
                 </tr>        
@@ -64,8 +64,8 @@ export default function GoalDetails(props) {
                 <tbody>
                         {data.instances.map((instance) => (
                             <tr key={instance.id}>
-                            <td>{Date(instance.startTime)}</td>  
-                            <td>{Date(instance.endTime)}</td>
+                            <td>{Date(instance.startTime).slice(0, 15)}</td>  
+                            <td>{Date(instance.endTime).slice(0, 15)}</td>
                             <td>{instance.comment}</td>
                             </tr>
                         ))}

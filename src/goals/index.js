@@ -36,17 +36,21 @@ export default function Goals(props) {
                     Category
                 </td>
                 <td>
-                    Active
+                    Completed
                 </td>
             </thead>
             <tbody>
             {data.map((goal) => (               
                 <tr key={goal.id}>
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
-                    <td>{Date(goal.startDate)}</td>
-                    <td>{goal.endDate}</td>
+                     <td>{Date(goal.startDate).slice(0, 15)}</td>
+                    <td>{Date(goal.endDate).slice(0, 15)}</td>
                     <td>{goal.category}</td>
-                    <td>{goal.completed.toString()}</td>
+                    <td>
+                        {(goal.completed === true) ? 
+                        (<img src={require("../img/check.png")} alt="Goal completed" />) : 
+                        (<img src={require("../img/false.png")} alt="Goal not completed" />)}
+                    </td>
                 </tr>        
             ))}
             </tbody>
