@@ -20,7 +20,7 @@ export default function Header() {
           <div className="account-bar">
           <span className="user-icon"><FontAwesomeIcon icon={faUser} /></span>
           <span className="settings-icon"><FontAwesomeIcon icon={faCog} onClick={() => theme.toggleMode()}/></span>
-          <span className="logout-icon"><FontAwesomeIcon icon={faSignOutAlt}onClick={() => auth.logout()}/></span>
+          <span className="logout-icon"><FontAwesomeIcon icon={faSignOutAlt} onClick={() => auth.logout()}/></span>
           </div>
           <h1>Developing You</h1>
         <nav>
