@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/fetch';
+import './goaldetails.scss';
 
 export default function GoalDetails(props) {
     const {id} = useParams();
@@ -47,6 +48,7 @@ export default function GoalDetails(props) {
                 </tr>        
             </tbody>
         </table>
+        <h3>Instances Log</h3>
         <table className="goaldetails">
             <thead>
                 <td>
