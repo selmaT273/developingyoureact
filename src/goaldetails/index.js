@@ -43,7 +43,6 @@ export default function GoalDetails(props) {
                     <td>{data.title}</td>
                     <td>{Date(data.startDate).slice(0, 15)}</td>
                     <td>{Date(data.endDate).slice(0, 15)}</td>
-                    <td>{data.category}</td>
                     <td>{data.completed.toString()}</td>
                 </tr>        
             </tbody>
