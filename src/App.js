@@ -32,6 +32,7 @@ function App() {
         </Route>
         <Route exact path="/Goals/:id">
           <GoalDetails />
+        </Route>
         <Route exact path="/About">
           <About />
         </Route>
