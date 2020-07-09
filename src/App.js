@@ -12,7 +12,7 @@ import Home from './home/index';
 
 import GoalDetails from './goaldetails/index';
 
-import About from './aboutUs'
+import About from './aboutUs/index'
 
 
 function App() {
