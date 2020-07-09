@@ -20,7 +20,26 @@ export default function useAuth() {
 
         login: this.login,
         logout: this.logout,
+        register: this.register,
       };
+    }
+
+    register = async(username, password, email) => {
+      const result = await fetch(`${usersAPI}/register`, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password, email }),
+      });
+      const body = await result.json();
+      if (result.ok) {
+        if (this.processToken(body.token, body)) {
+          return result.ok;
+        }
+      }
+      this.logout();
+      return result.ok;
     }
 
     login = async (username, password) => {
