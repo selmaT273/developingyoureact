@@ -31,22 +31,22 @@ export default function useAuth() {
         email: email,
       }
       console.log(body);
-          const result = await fetch(`${usersAPI}/register`, {
+          await fetch(`${usersAPI}/register`, {
             method: 'post',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify( body ),
           });
-          console.log(result);
-          const responseBody = await result.json();
-          if (result.ok) {
-            if (this.processToken(responseBody.token, responseBody)) {
-              return result.ok;
-            }
-          }
-          this.context.logout();
-          return result.ok;
+          // console.log(result);
+          // const responseBody = await result.json();
+          // if (result.ok) {
+          //   if (this.processToken(responseBody.token, responseBody)) {
+          //     return result.ok;
+          //   }
+          // }
+          // this.context.logout();
+          // return result.ok;
     }
 
     login = async (username, password) => {
