@@ -7,6 +7,7 @@ function useFetch(url) {
 
     useEffect(() => {
         if (!user){
+            setData([]);
             return;
         }
 

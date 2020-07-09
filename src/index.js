@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './reset.scss';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 import { AuthProvider } from './contexts/auth';
