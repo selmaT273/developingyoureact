@@ -34,6 +34,7 @@ export default class CreateGoal extends React.Component{
             },
             body: JSON.stringify(goal),
         });
+        this.setState({  });
     }
 
     render(){
