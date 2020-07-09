@@ -20,7 +20,12 @@ export default function Home(props){
     if (!data) {
         return <p class="mainLoader">Loading...</p>
         }
+
         const activeGoals = data.filter((goal) => (goal.completed === false));
+
+        if(activeGoals.length === 0){
+            return <p>No Active Goals</p>
+        }
         
         return (
             <div className="home-container">

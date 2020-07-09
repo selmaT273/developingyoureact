@@ -41,7 +41,7 @@ export default function Goals(props) {
             <tbody>
             {data.map((goal) => (               
                 <tr key={goal.id}>
-                    <Link exact to={`/Goals/${goal.id}`}><td key={goal.id}> {goal.title}</td></Link>
+                    <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
                     <td>{Date(goal.startDate)}</td>
                     <td>{goal.endDate}</td>
                     <td>{goal.category}</td>
