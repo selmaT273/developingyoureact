@@ -11,6 +11,36 @@ export default function GoalDetails(props) {
 
     return (
         <>
+        <table className="goals-table">
+            <thead>
+                <td>
+                    Goal Name
+                </td>
+                <td>
+                    Start Date
+                </td>
+                <td>
+                    End Date
+                </td>
+                <td>
+                    Category
+                </td>
+                <td>
+                    Active
+                </td>
+            </thead>
+            <tbody>
+            {data.map((goal) => (               
+                <tr key={goal.id}>
+                    <td>{goal.title}</td>
+                    <td>{Date(goal.startDate)}</td>
+                    <td>{goal.endDate}</td>
+                    <td>{goal.category}</td>
+                    <td>{goal.completed.toString()}</td>
+                </tr>        
+            ))}
+            </tbody>
+        </table>
         <h1>{goal.title}</h1>
         <ul>
             <li>{goal.startDate}</li>
