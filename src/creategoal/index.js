@@ -6,10 +6,10 @@ export default class CreateGoal extends React.Component{
 
     constructor(props){
         super(props);
+        let today = new Date().toLocaleString();
 
-        this.state = {
-            
-        }
+        this.date = today;
+
     }
 
     handleSubmit = event => {
@@ -34,7 +34,6 @@ export default class CreateGoal extends React.Component{
             },
             body: JSON.stringify(goal),
         });
-        this.setState({  });
     }
 
     render(){
