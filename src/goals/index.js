@@ -48,8 +48,8 @@ export default function Goals(props) {
                     <td>{goal.category}</td>
                     <td>
                         {(goal.completed === true) ? 
-                        (<img src={require("../img/check.png")} alt="Goal completed" />) : 
-                        (<img src={require("../img/false.png")} alt="Goal not completed" />)}
+                        (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
+                        (<img src={require("../img/false.png")} alt="Goal not completed" height="30px" width="30px" />)}
                     </td>
                 </tr>        
             ))}
