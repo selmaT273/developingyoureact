@@ -1,8 +1,14 @@
 footer {
-    // background-color: black;
     color: #1e496d;
     text-align: center;
-    // margin-top: 58vh;
-    height: 4vh;
     font-size: 10px;
+
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+  }

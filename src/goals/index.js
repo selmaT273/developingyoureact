@@ -1,6 +1,7 @@
 import React from 'react';
 import useFetch from '../hooks/fetch';
 import './goals.scss';
+import CreateGoal from '../creategoal';
 
 export default function Goals(props) {
     const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
@@ -16,7 +17,7 @@ export default function Goals(props) {
     
     return (
         <>
-
+        <CreateGoal />
         <table className="goals-table">
             <thead>
                 <td>
