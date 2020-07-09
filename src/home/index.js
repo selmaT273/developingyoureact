@@ -4,7 +4,8 @@ import './home.scss';
 import CreateInstance from '../createinstance/'
 import { useState } from 'react';
 import ProgressBar from '../charts/progressbar';
-
+import GoalDetails from '../goaldetails/index';
+import { Switch, Route, NavLink, Link } from 'react-router-dom';
 
 
 
@@ -27,9 +28,10 @@ export default function Home(props){
                 <h1>Active Goals</h1>
                 {data.map((goal) => (        
                     <div key={goal.id} className="snapshot-container">       
-                    <h2 key={goal.id}> {goal.title}</h2>
+                    <Link exact to={`/Goals/${goal.id}`}><h2 key={goal.id}> {goal.title}</h2></Link>
                     <span className="progress-bar"><ProgressBar goal={goal} /></span>
                     <button key={goal.id} onClick={()=> setCurrentGoal(goal)}> + </button>
+
                     </div>
                 ))}
 
