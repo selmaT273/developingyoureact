@@ -10,6 +10,10 @@ export default function GoalDetails(props) {
         return <p>Loading...</p>
     }
 
+    if (!data.id) {
+        return <p> Not Found </p>
+    }
+
     return (
         <>
         <h3>
