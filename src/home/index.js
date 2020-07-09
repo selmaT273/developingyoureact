@@ -4,8 +4,7 @@ import './home.scss';
 import CreateInstance from '../createinstance/'
 import { useState } from 'react';
 import ProgressBar from '../charts/progressbar';
-import GoalDetails from '../goaldetails/index';
-import { Switch, Route, NavLink, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 
 
