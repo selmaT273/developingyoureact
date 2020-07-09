@@ -21,7 +21,7 @@ export default function AboutUs() {
                     <img alt="francesco" src={require('../../public/assets/FrancescoPic.jpg')} />
                     <p class="FrancescoWords">
                         Hello, my name is Francesco Troiano, I am a software developer with previous experience in the customer service industry. In previous jobs I had found my passion, which was for people. I enjoyed working with them, helping them develop, and watching them grow drove me to furthering my own self. In my drive to become a full stack developer I found that I could take my passion and apply it towards the wonderful world of coding, and I'm excited to do so at future opportunities.
-        </p>
+                     </p>
 
 
                 </div>
