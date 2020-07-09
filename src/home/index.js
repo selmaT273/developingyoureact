@@ -20,11 +20,12 @@ export default function Home(props){
     if (!data) {
         return <p class="mainLoader">Loading...</p>
         }
-
+        const activeGoals = data.filter((goal) => (goal.completed === false));
+        
         return (
             <div className="home-container">
                 <h1>Active Goals</h1>
-                {data.map((goal) => (        
+                {activeGoals.map((goal) => (        
                     <div key={goal.id} className="snapshot-container">       
                     <span className="goal-title"><Link exact to={`/Goals/${goal.id}`}><h2 key={goal.id}> {goal.title}</h2></Link></span>
                     <button key={goal.id} onClick={()=> setCurrentGoal(goal)}> + </button>
