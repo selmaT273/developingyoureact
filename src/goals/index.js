@@ -1,5 +1,4 @@
 import React from 'react';
-import ProgressBar from '../charts/progressbar';
 import useFetch from '../hooks/fetch';
 import './goals.scss';
 
@@ -48,11 +47,6 @@ export default function Goals(props) {
             ))}
             </tbody>
         </table>
-        <div className="progress-bar">
-            {data.map((goal) => (
-                <ProgressBar goal={goal} />
-            ))}
-        </div>
         </>
     )
 }

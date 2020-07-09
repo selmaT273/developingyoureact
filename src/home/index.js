@@ -3,6 +3,8 @@ import useFetch from '../hooks/fetch';
 import './home.scss';
 import CreateInstance from '../createinstance/'
 import { useState } from 'react';
+import ProgressBar from '../charts/progressbar';
+
 
 
 
@@ -26,6 +28,7 @@ export default function Home(props){
                 {data.map((goal) => (        
                     <div key={goal.id} className="snapshot-container">       
                     <h2 key={goal.id}> {goal.title}</h2>
+                    <span className="progress-bar"><ProgressBar goal={goal} /></span>
                     <button key={goal.id} onClick={()=> setCurrentGoal(goal)}> + </button>
                     </div>
                 ))}
