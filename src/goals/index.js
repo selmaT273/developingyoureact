@@ -33,7 +33,7 @@ export default function Goals(props) {
                     Category
                 </td>
                 <td>
-                    Active
+                    Completed
                 </td>
             </thead>
             <tbody>
@@ -43,7 +43,11 @@ export default function Goals(props) {
                     <td>{Date(goal.startDate)}</td>
                     <td>{goal.endDate}</td>
                     <td>{goal.category}</td>
-                    <td>{goal.completed.toString()}</td>
+                    <td>
+                        {(goal.completed === true) ? 
+                        (<img src={require("../img/check.png")} alt="Goal completed" />) : 
+                        (<img src={require("../img/false.png")} alt="Goal not completed" />)}
+                    </td>
                 </tr>        
             ))}
             </tbody>
