@@ -71,10 +71,6 @@ export default class CreateGoal extends React.Component{
                         placeholder="What's your desired rate?" />
                     </label>
     
-                    <select name="category">
-    
-                    </select>
-    
                     <button>Create</button>
                 </form>
             </>

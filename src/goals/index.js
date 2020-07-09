@@ -33,9 +33,6 @@ export default function Goals(props) {
                     End Date
                 </td>
                 <td>
-                    Category
-                </td>
-                <td>
                     Completed
                 </td>
             </thead>
@@ -45,7 +42,6 @@ export default function Goals(props) {
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
                      <td>{Date(goal.startDate).slice(0, 15)}</td>
                     <td>{Date(goal.endDate).slice(0, 15)}</td>
-                    <td>{goal.category}</td>
                     <td>
                         {(goal.completed === true) ? 
                         (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
