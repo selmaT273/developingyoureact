@@ -19,7 +19,7 @@ export default function Home(props){
 
 
     if (!data) {
-        return <p>Loading...</p>
+        return <p class="mainLoader">Loading...</p>
         }
 
         return (
