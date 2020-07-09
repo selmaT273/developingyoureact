@@ -24,22 +24,29 @@ export default function useAuth() {
       };
     }
 
-    register = async(username, password, email) => {
-      const result = await fetch(`${usersAPI}/register`, {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({username, password, email }),
-      });
-      const body = await result.json();
-      if (result.ok) {
-        if (this.processToken(body.token, body)) {
-          return result.ok;
-        }
+    register = async(userName, password, email) => {
+      const body = {
+        userName: userName,
+        password: password,
+        email: email,
       }
-      this.logout();
-      return result.ok;
+      console.log(body);
+          const result = await fetch(`${usersAPI}/register`, {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify( body ),
+          });
+          console.log(result);
+          const responseBody = await result.json();
+          if (result.ok) {
+            if (this.processToken(responseBody.token, responseBody)) {
+              return result.ok;
+            }
+          }
+          this.context.logout();
+          return result.ok;
     }
 
     login = async (username, password) => {

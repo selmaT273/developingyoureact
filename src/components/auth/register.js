@@ -5,9 +5,10 @@ import '../../index.scss';
 export default class Register extends React.Component {
     static contextType = AuthContext;
 
-    handleSubmit = e => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        this.context.register();
+        const { userName, password, email } = e.target.elements;
+        this.context.register(userName.value, password.value, email.value);
     }
 
     render() {
@@ -15,7 +16,7 @@ export default class Register extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h3>Start achieving your goals today!</h3>
-                <input placeholder="Username" name="username" required />
+                <input placeholder="Username" name="userName" required />
                 <br />
                 <br />
                 <input placeholder="Password" type="password" name="password" required />
