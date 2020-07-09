@@ -9,6 +9,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Login from './components/auth/login';
 import Home from './home/index';
+import About from './aboutUs'
 
 function App() {
   const { mode } = useTheme();
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route exact path="/Goals">
           <Goals />
+        </Route>
+        <Route exact path="/About">
+          <About />
         </Route>
       </Switch>
       <Footer />
