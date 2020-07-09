@@ -10,12 +10,6 @@ export default function GoalDetails(props) {
         return <p>Loading...</p>
     }
 
-    // console.log(data);
-
-    // return(
-    //     <h1>hi</h1>
-    // )
-
     return (
         <>
                 <table className="goaldetails-table">
@@ -69,6 +63,6 @@ export default function GoalDetails(props) {
                 </tbody>
         </table>
         </>
-        
+
     )
 }

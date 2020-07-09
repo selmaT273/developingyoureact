@@ -17,7 +17,6 @@ export default function Home(props){
     
     
 
-
     if (!data) {
         return <p class="mainLoader">Loading...</p>
         }
@@ -27,10 +26,13 @@ export default function Home(props){
                 <h1>Active Goals</h1>
                 {data.map((goal) => (        
                     <div key={goal.id} className="snapshot-container">       
-                    <Link exact to={`/Goals/${goal.id}`}><h2 key={goal.id}> {goal.title}</h2></Link>
-                    <span className="progress-bar"><ProgressBar goal={goal} /></span>
+                    <span className="goal-title"><Link exact to={`/Goals/${goal.id}`}><h2 key={goal.id}> {goal.title}</h2></Link></span>
                     <button key={goal.id} onClick={()=> setCurrentGoal(goal)}> + </button>
-
+                    <span className="progress-bar"><ProgressBar goal={goal} /></span>
+                    <div className="badges-wrapper"><img className="badges" alt="chase" src={require('../img/badge1.png')} />
+                    <img className="badges" alt="chase" src={require('../img/badge2.png')} />
+                    <img className="badges" alt="chase" src={require('../img/badge3.png')} />
+                    </div>
                     </div>
                 ))}
 
