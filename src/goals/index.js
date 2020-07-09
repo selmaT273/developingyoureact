@@ -20,6 +20,7 @@ export default function Goals(props) {
     return (
         <>
         <CreateGoal />
+        <h3>Goals</h3>
         <table className="goals-table">
             <thead>
                 <td>

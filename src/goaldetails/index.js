@@ -12,6 +12,9 @@ export default function GoalDetails(props) {
 
     return (
         <>
+        <h3>
+            Details
+        </h3>
                 <table className="goaldetails-table">
                 <thead>
                     <td>
