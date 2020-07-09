@@ -1,45 +1,21 @@
-.light {
-        body {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #F9EBE0;
-            font-family: helvetica;
-            height: 100%;
-        }
-
-        .login-form {
-            margin-top: 100px;
-            text-align: center;
-        }
-
-        .login-button {
-            background-color: white;
-        }
-
-        h3 {
-            color: #1e496d;
-        }
-    }
-
-.dark {
-    body {
-        max-width: 500px;
-        margin: 0 auto;
-        background-color: #202020;
-        font-family: helvetica;
-        height: 100%;
-    }
-
-    .login-form {
-        margin-top: 100px;
-        text-align: center;
-    }
-
-    .login-button {
-        background-color: #202020;
-    }
-
-    h3 {
-        color: #FFFFFF;
-    }
+body {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #F9EBE0;
+    font-family: helvetica;
+    height: 100%;
 }
+
+.login-form {
+margin-top: 100px;
+text-align: center;
+}
+
+.login-button {
+    background-color: white;
+}
+
+h3 {
+    color: #1e496d;
+}
+
