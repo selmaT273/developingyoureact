@@ -6,10 +6,10 @@ import {  Link } from 'react-router-dom';
 import useAuth from '../contexts/auth';
 
 
+
 export default function Goals() {
     const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
     const {user} = useAuth();
-
 
     if (!data) {
         return <p>Loading...</p>
@@ -19,25 +19,30 @@ export default function Goals() {
         return null;
     }
 
+    const refreshOnSubmit = () => {
+        refresh();
+    }
     
     return (
         <>
-        <CreateGoal />
+        <CreateGoal refreshPage={refreshOnSubmit} />
         <h3>Goals</h3>
         <table className="goals-table">
             <thead>
-                <td>
-                    Goal Name
-                </td>
-                <td>
-                    Start Date
-                </td>
-                <td>
-                    End Date
-                </td>
-                <td>
-                    Completed
-                </td>
+                <tr>
+                    <th>
+                        Goal Name
+                    </th>
+                    <th>
+                        Start Date
+                    </th>
+                    <th>
+                        End Date
+                    </th>
+                    <th>
+                        Completed
+                    </th>
+                </tr>
             </thead>
             <tbody>
             {data.map((goal) => (               

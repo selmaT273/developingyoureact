@@ -16,8 +16,6 @@ const CreateInstance = (props) => {
             endTime: endTime.value,
             comment: comment.value
         }
-
-        console.log(instance);
     
       const response = await fetch(`https://developingyouapi.azurewebsites.net/api/goals/${goal.id}/instances`, {
             method: 'POST',

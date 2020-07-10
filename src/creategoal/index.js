@@ -5,14 +5,6 @@ import './creategoal.scss';
 export default class CreateGoal extends React.Component{
     static contextType = AuthContext;
 
-    constructor(props){
-        super(props);
-        let today = new Date().toLocaleString();
-
-        this.date = today;
-
-    }
-
     handleSubmit = event => {
         event.preventDefault();
         const { goalTitle, startDate, endDate, startValue, targetValue } = event.target.elements;
@@ -25,8 +17,6 @@ export default class CreateGoal extends React.Component{
             targetValue: parseInt(targetValue.value),
         };
 
-        console.log(goal);
-
         fetch('https://developingyouapi.azurewebsites.net/api/goals', {
             method: 'POST',
             headers: {
@@ -35,6 +25,8 @@ export default class CreateGoal extends React.Component{
             },
             body: JSON.stringify(goal),
         });
+
+        this.props.refreshPage();
     }
 
     render(){

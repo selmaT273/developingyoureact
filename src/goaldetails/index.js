@@ -22,21 +22,23 @@ export default function GoalDetails(props) {
         </h3>
                 <table className="goaldetails-table">
                 <thead>
-                    <td>
-                        Goal Name
-                    </td>
-                    <td>
-                        Start Date
-                    </td>
-                    <td>
-                        End Date
-                    </td>
-                    <td>
-                        Category
-                    </td>
-                    <td>
-                        Active
-                    </td>
+                    <tr>
+                        <th>
+                            Goal Name
+                        </th>
+                        <th>
+                            Start Date
+                        </th>
+                        <th>
+                            End Date
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Active
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>         
                 <tr key={data.id}>
@@ -50,15 +52,17 @@ export default function GoalDetails(props) {
         <h3>Instances Log</h3>
         <table className="goaldetails">
             <thead>
-                <td>
-                    Start Time
-                </td>
-                <td>
-                    End Time
-                </td>
-                <td>
-                    Comments
-                </td>
+                <tr>
+                    <th>
+                        Start Time
+                    </th>
+                    <th>
+                        End Time
+                    </th>
+                    <th>
+                        Comments
+                    </th>
+                </tr>
             </thead>
                 <tbody>
                         {data.instances.map((instance) => (
