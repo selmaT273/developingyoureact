@@ -48,8 +48,14 @@ export default class Login extends React.Component {
         <br />
         <br />
         <button className="login-button">Log In</button>
+        <button className="register-button>" onClick={this.toggleRegisterModal}>Register</button> 
       </form>
-      <Register />
+
+      <If condition={showRegister}>
+        <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
+          <Register />
+        </Modal>
+      </If>
       </>
     )
   }
