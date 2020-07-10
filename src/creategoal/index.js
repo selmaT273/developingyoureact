@@ -1,5 +1,6 @@
 import React from 'react';
 import { AuthContext } from '../contexts/auth';
+import './creategoal.scss';
 
 export default class CreateGoal extends React.Component{
     static contextType = AuthContext;
@@ -31,40 +32,42 @@ export default class CreateGoal extends React.Component{
     render(){
         return (
             <>
-                <h3>Create Your Goal!</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="goalTitle">Title: 
-                    <input 
-                        name="goalTitle" 
-                        placeholder="Goal title" />
-                    </label>
-    
-                    <label htmlFor="startDate">Start Date: 
-                    <input 
-                        name="startDate" 
-                        type="datetime-local" />
-                    </label>
-    
-                    <label htmlFor="endDate">End Date: 
-                    <input 
-                        name="endDate" 
-                        type="datetime-local" />
-                    </label>
-    
-                    <label htmlFor="startValue">Start Value: 
-                    <input 
-                        name="startValue" 
-                        placeholder="What's your current rate?" />
-                    </label>
-    
-                    <label htmlFor="targetValue">Target Value: 
-                    <input 
-                        name="targetValue" 
-                        placeholder="What's your desired rate?" />
-                    </label>
-    
-                    <button>Create</button>
-                </form>
+                <div className="createGoal">
+                    <h3>Create Your Goal!</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <label for="goalTitle">Title: 
+                        <input 
+                            name="goalTitle" 
+                            placeholder="Goal title" />
+                        </label>
+        
+                        <label for="startDate">Start Date: 
+                        <input 
+                            name="startDate" 
+                            type="datetime-local" />
+                        </label>
+        
+                        <label for="endDate">End Date: 
+                        <input 
+                            name="endDate" 
+                            type="datetime-local" />
+                        </label>
+        
+                        <label for="startValue">Start Value: 
+                        <input 
+                            name="startValue" 
+                            placeholder="What's your current rate?" />
+                        </label>
+        
+                        <label for="targetValue">Target Value: 
+                        <input 
+                            name="targetValue" 
+                            placeholder="What's your desired rate?" />
+                        </label>
+        
+                        <button>Create</button>
+                    </form>
+                </div>
             </>
         )
     }

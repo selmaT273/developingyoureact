@@ -3,13 +3,20 @@ import useFetch from '../hooks/fetch';
 import './goals.scss';
 import CreateGoal from '../creategoal';
 import {  Link } from 'react-router-dom';
+import useAuth from '../contexts/auth';
 
 
-export default function Goals(props) {
+
+export default function Goals() {
     const {data, refresh} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
+    const {user} = useAuth();
 
     if (!data) {
         return <p>Loading...</p>
+    }
+
+    if (!user) {
+        return null;
     }
 
     const refreshOnSubmit = () => {

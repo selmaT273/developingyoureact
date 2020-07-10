@@ -42,7 +42,7 @@ export default function ProgressBar(props){
             clockWise
             dataKey="value"
             cornerRadius={circleSize / 2}
-            fill="#CFE4F5"
+            fill="#BCD4E8"
             />
             <text
             x={circleSize / 2}
