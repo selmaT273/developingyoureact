@@ -42,7 +42,11 @@ export default function GoalDetails(props) {
                     <td>{data.title}</td>
                     <td>{Date(data.startDate).slice(0, 15)}</td>
                     <td>{Date(data.endDate).slice(0, 15)}</td>
-                    <td>{data.completed.toString()}</td>
+                    <td>
+                        {(data.completed === true) ? 
+                        (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
+                        (<img src={require("../img/false.png")} alt="Goal not completed" height="30px" width="30px" />)}
+                    </td>
                 </tr>        
             </tbody>
         </table>
