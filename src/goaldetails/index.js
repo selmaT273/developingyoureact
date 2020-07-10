@@ -55,6 +55,9 @@ export default function GoalDetails(props) {
             <thead>
                 <tr>
                     <th>
+                        Date
+                    </th>
+                    <th>
                         Start Time
                     </th>
                     <th>
@@ -68,6 +71,7 @@ export default function GoalDetails(props) {
                 <tbody>
                         {data.instances.map((instance) => (
                             <tr key={instance.id}>
+                            <td>{new Date(instance.startTime).toLocaleDateString()}</td>
                             <td>{new Date(instance.startTime).toLocaleTimeString()}</td>  
                             <td>{new Date(instance.endTime).toLocaleTimeString()}</td>
                             <td>{instance.comment}</td>
