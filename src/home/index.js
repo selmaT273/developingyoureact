@@ -4,14 +4,15 @@ import './home.scss';
 import CreateInstance from '../createinstance/'
 import { useState } from 'react';
 import ProgressBar from '../charts/progressbar';
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import { AuthContext } from '../contexts/auth';
 
 
 
-export default function Home(props){
+export default function Home() {
     const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
     const [currentGoal, setCurrentGoal] = useState(null);
-
+    const {user} = useFetch('https://developingyouapi.azurewebsites.net/api/users/self');
     
     
     
@@ -23,10 +24,14 @@ export default function Home(props){
 
         const activeGoals = data.filter((goal) => (goal.completed === false));
 
-        if(activeGoals.length === 0){
+        if(user && activeGoals.length === 0){
             return <p>No Active Goals</p>
         }
-        
+
+        if (!user && activeGoals.length === 0){
+            return <p class="mainLoader">No Active Goals</p>
+        }
+
         return (
             <div className="home-container">
                 <h1>Active Goals</h1>
@@ -41,9 +46,8 @@ export default function Home(props){
                     </div>
                     </div>
                 ))}
-
-                {currentGoal && 
-                <CreateInstance goal={currentGoal} onClose={()=> setCurrentGoal(null)} />}
+                
+                {currentGoal && <CreateInstance goal={currentGoal} onClose={()=> setCurrentGoal(null)} />}
             </div>
         )
 }
