@@ -33,15 +33,15 @@ export default function GoalDetails(props) {
                             End Date
                         </th>
                         <th>
-                            Active
+                            Completed
                         </th>
                     </tr>
                 </thead>
                 <tbody>         
                 <tr key={data.id}>
                     <td>{data.title}</td>
-                    <td>{Date(data.startDate).slice(0, 15)}</td>
-                    <td>{Date(data.endDate).slice(0, 15)}</td>
+                    <td>{new Date(data.startDate).toLocaleDateString()}</td>
+                    <td>{new Date(data.endDate).toLocaleDateString()}</td>
                     <td>
                         {(data.completed === true) ? 
                         (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
@@ -54,6 +54,9 @@ export default function GoalDetails(props) {
         <table className="goaldetails">
             <thead>
                 <tr>
+                    <th>
+                        Date
+                    </th>
                     <th>
                         Start Time
                     </th>
@@ -68,8 +71,9 @@ export default function GoalDetails(props) {
                 <tbody>
                         {data.instances.map((instance) => (
                             <tr key={instance.id}>
-                            <td>{Date(instance.startTime).slice(0, 15)}</td>  
-                            <td>{Date(instance.endTime).slice(0, 15)}</td>
+                            <td>{new Date(instance.startTime).toLocaleDateString()}</td>
+                            <td>{new Date(instance.startTime).toLocaleTimeString()}</td>  
+                            <td>{new Date(instance.endTime).toLocaleTimeString()}</td>
                             <td>{instance.comment}</td>
                             </tr>
                         ))}

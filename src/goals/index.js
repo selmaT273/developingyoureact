@@ -54,8 +54,8 @@ export default function Goals() {
             {data.map((goal) => (               
                 <tr key={goal.id}>
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
-                     <td>{Date(goal.startDate).slice(0, 15)}</td>
-                    <td>{Date(goal.endDate).slice(0, 15)}</td>
+                     <td>{new Date(goal.startDate).toLocaleDateString()}</td>
+                    <td>{new Date(goal.endDate).toLocaleDateString()}</td>
                     <td>{goal.startValue} hrs</td>
                     <td>{goal.targetValue} hrs</td>
                     <td>
