@@ -25,7 +25,6 @@ export default class Login extends React.Component {
   }
 
   render() {
-    console.log('auth context', this.context);
 
     const { user } = this.context;
 

@@ -4,14 +4,6 @@ import { AuthContext } from '../contexts/auth';
 export default class CreateGoal extends React.Component{
     static contextType = AuthContext;
 
-    constructor(props){
-        super(props);
-        let today = new Date().toLocaleString();
-
-        this.date = today;
-
-    }
-
     handleSubmit = event => {
         event.preventDefault();
         const { goalTitle, startDate, endDate, startValue, targetValue } = event.target.elements;
@@ -24,8 +16,6 @@ export default class CreateGoal extends React.Component{
             targetValue: parseInt(targetValue.value),
         };
 
-        console.log(goal);
-
         fetch('https://developingyouapi.azurewebsites.net/api/goals', {
             method: 'POST',
             headers: {
@@ -34,6 +24,8 @@ export default class CreateGoal extends React.Component{
             },
             body: JSON.stringify(goal),
         });
+
+        this.props.refreshPage();
     }
 
     render(){
@@ -41,31 +33,31 @@ export default class CreateGoal extends React.Component{
             <>
                 <h3>Create Your Goal!</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="goalTitle">Title: 
+                    <label htmlFor="goalTitle">Title: 
                     <input 
                         name="goalTitle" 
                         placeholder="Goal title" />
                     </label>
     
-                    <label for="startDate">Start Date: 
+                    <label htmlFor="startDate">Start Date: 
                     <input 
                         name="startDate" 
                         type="datetime-local" />
                     </label>
     
-                    <label for="endDate">End Date: 
+                    <label htmlFor="endDate">End Date: 
                     <input 
                         name="endDate" 
                         type="datetime-local" />
                     </label>
     
-                    <label for="startValue">Start Value: 
+                    <label htmlFor="startValue">Start Value: 
                     <input 
                         name="startValue" 
                         placeholder="What's your current rate?" />
                     </label>
     
-                    <label for="targetValue">Target Value: 
+                    <label htmlFor="targetValue">Target Value: 
                     <input 
                         name="targetValue" 
                         placeholder="What's your desired rate?" />

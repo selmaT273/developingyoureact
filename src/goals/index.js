@@ -6,35 +6,36 @@ import {  Link } from 'react-router-dom';
 
 
 export default function Goals(props) {
-    const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
-
+    const {data, refresh} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
 
     if (!data) {
         return <p>Loading...</p>
     }
-    console.log(data);
 
-    const noramlizedDate = Date(data.startDate);
-    console.log(noramlizedDate);
+    const refreshOnSubmit = () => {
+        refresh();
+    }
     
     return (
         <>
-        <CreateGoal />
+        <CreateGoal refreshPage={refreshOnSubmit} />
         <h3>Goals</h3>
         <table className="goals-table">
             <thead>
-                <td>
-                    Goal Name
-                </td>
-                <td>
-                    Start Date
-                </td>
-                <td>
-                    End Date
-                </td>
-                <td>
-                    Completed
-                </td>
+                <tr>
+                    <th>
+                        Goal Name
+                    </th>
+                    <th>
+                        Start Date
+                    </th>
+                    <th>
+                        End Date
+                    </th>
+                    <th>
+                        Completed
+                    </th>
+                </tr>
             </thead>
             <tbody>
             {data.map((goal) => (               
