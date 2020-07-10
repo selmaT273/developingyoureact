@@ -5,10 +5,10 @@
     right: 0;
     top: 0;
     z-index: 100;
+    position: fixed;
   
     &:after {
         background: #BCD4E8;
-        //background: #1e496d;
         bottom: 0;
         content: ' ';
         left: 0;
@@ -31,6 +31,7 @@
         transform: translateY(-50%);
         width: 600px;
         z-index: 1000;
+        border-radius: 25px;
   
         .header {
           padding-left: 5px;
@@ -42,6 +43,7 @@
             font-weight: bold;
             height: 1.5rem;
             line-height: 1rem;
+            border-radius: 25px 25px 0 0;
   
             .title {
                 color: #000;
@@ -49,16 +51,18 @@
             }
   
             button {
-                background: inherit;
+                background: #1e496d;
+                color: white;
                 cursor: pointer;
                 display: inline-block;
                 height: 100%;
                 line-height: 100%;
                 text-align: center;
+                margin-left: 500px;
   
                 &:hover {
-                    background: #1e496d;
-                    color: #fff;
+                    background: #F3E2D4;
+                    color: black;
                 }
             }
         }
