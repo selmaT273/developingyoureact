@@ -6,20 +6,19 @@ import {  Link } from 'react-router-dom';
 
 
 export default function Goals(props) {
-    const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
-
+    const {data, refresh} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
 
     if (!data) {
         return <p>Loading...</p>
     }
 
-    const refreshOnSubmit = (formValues) => {
-        this.setState(formValues);
+    const refreshOnSubmit = () => {
+        refresh();
     }
     
     return (
         <>
-        <CreateGoal refreshOnSubmit={refreshOnSubmit} />
+        <CreateGoal refreshPage={refreshOnSubmit} />
         <h3>Goals</h3>
         <table className="goals-table">
             <thead>

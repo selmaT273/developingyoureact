@@ -4,11 +4,6 @@ import { AuthContext } from '../contexts/auth';
 export default class CreateGoal extends React.Component{
     static contextType = AuthContext;
 
-    constructor(props){
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
     handleSubmit = event => {
         event.preventDefault();
         const { goalTitle, startDate, endDate, startValue, targetValue } = event.target.elements;
@@ -29,6 +24,8 @@ export default class CreateGoal extends React.Component{
             },
             body: JSON.stringify(goal),
         });
+
+        this.props.refreshPage();
     }
 
     render(){
