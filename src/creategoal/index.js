@@ -6,10 +6,7 @@ export default class CreateGoal extends React.Component{
 
     constructor(props){
         super(props);
-        let today = new Date().toLocaleString();
-
-        this.date = today;
-
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit = event => {
@@ -23,8 +20,6 @@ export default class CreateGoal extends React.Component{
             startValue: parseInt(startValue.value),
             targetValue: parseInt(targetValue.value),
         };
-
-        console.log(goal);
 
         fetch('https://developingyouapi.azurewebsites.net/api/goals', {
             method: 'POST',
