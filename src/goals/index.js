@@ -8,7 +8,7 @@ import useAuth from '../contexts/auth';
 
 
 export default function Goals() {
-    const {data} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
+    const {data, refresh} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
     const {user} = useAuth();
 
     if (!data) {
