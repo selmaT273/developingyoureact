@@ -37,7 +37,7 @@ export default function Home() {
                 {activeGoals.map((goal) => (        
                     <div key={goal.id} className="snapshot-container">       
                     <span className="goal-title"><Link exact to={`/Goals/${goal.id}`}><h2 key={goal.id}> {goal.title}</h2></Link></span>
-                    <button key={goal.id} onClick={()=> setCurrentGoal(goal)}> + </button>
+                    <button className="instance-button" key={goal.id} onClick={()=> setCurrentGoal(goal)}> + </button>
                     <span className="progress-bar"><ProgressBar goal={goal} /></span>
                     <div className="badges-wrapper"><img className="badges" alt="chase" src={require('../img/badge1.png')} />
                     <img className="badges" alt="chase" src={require('../img/badge2.png')} />
