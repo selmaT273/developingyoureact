@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import useAuth from '../contexts/auth'
 
 function useFetch(url) {
     const [data, setData] = useState(null);
     const { user } = useAuth();
 
-    async function goFetch(){
+    const goFetch = useCallback(async function goFetch(){
         let options = { headers: {} };
         if (user) {
             options.headers['Authorization'] = `Bearer ${user.token}`;
@@ -14,7 +14,7 @@ function useFetch(url) {
         let response = await fetch(url, options);
         let json = await response.json();
         setData(json);
-    }
+    }, [url, user]);
 
     useEffect(() => {
         if (!user){
@@ -22,7 +22,7 @@ function useFetch(url) {
             return;
         }
         goFetch();
-    }, [url, user]);
+    }, [goFetch, user]);
 
     return {
         data,
