@@ -42,21 +42,21 @@ const CreateInstance = (props) => {
     }
 
 return (
-    <Modal  onClose={onClose}> <h2>{goal.title}</h2>
+    <Modal  onClose={onClose}> <h2 className="instanceTitle">{goal.title}</h2>
         <div>
             <form onSubmit={handleSubmit}>
 
-               <label > 
+               <label className="start" > 
                    Start Time:
                <input name= "startTime"  type="datetime-local"/>
                </label>
 
-               <label > 
+               <label className="end"> 
                    End Time:
                <input name= "endTime" type="datetime-local"/>
                </label>
 
-               <label > 
+               <label className="commenting" > 
                   Comment(s):
                <input name= "comment" type="text"/>
                </label>
