@@ -33,9 +33,6 @@ export default function GoalDetails(props) {
                             End Date
                         </th>
                         <th>
-                            Category
-                        </th>
-                        <th>
                             Active
                         </th>
                     </tr>
