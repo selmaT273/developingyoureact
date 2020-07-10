@@ -2,16 +2,13 @@ import React from 'react';
 
 
 const Modal = props => {
-    const { title, onClose, children } = props;
+    const { onClose, children } = props;
 
     return (
         <div>
             <div>
-                <span className="title">
-                {title}
-                </span>
                 <button onClick={onClose}>
-                &times;
+                Close
                 </button>
                 <div className="content">
                     {children}
