@@ -1,5 +1,6 @@
 import React from 'react';
 import useAuth from '../contexts/auth';
+import Modal from '../components/modal';
 
 
 const CreateInstance = (props) => {
@@ -41,7 +42,7 @@ const CreateInstance = (props) => {
     }
 
 return (
-    <div> <h2>{goal.title}</h2> <button onClick={onClose}>x</button>
+    <Modal  onClose={onClose}> <h2>{goal.title}</h2>
         <div>
             <form onSubmit={handleSubmit}>
 
@@ -66,7 +67,7 @@ return (
             </label>
             </form>
         </div>
-    </div>
+    </Modal>
 )
 
 }

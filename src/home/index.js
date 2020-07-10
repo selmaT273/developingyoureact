@@ -5,7 +5,6 @@ import CreateInstance from '../createinstance/'
 import { useState } from 'react';
 import ProgressBar from '../charts/progressbar';
 import { Link } from 'react-router-dom';
-// import { AuthContext } from '../contexts/auth';
 
 
 
