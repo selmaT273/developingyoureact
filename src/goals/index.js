@@ -12,14 +12,14 @@ export default function Goals(props) {
     if (!data) {
         return <p>Loading...</p>
     }
-    console.log(data);
 
-    const noramlizedDate = Date(data.startDate);
-    console.log(noramlizedDate);
+    const refreshOnSubmit = (formValues) => {
+        this.setState(formValues);
+    }
     
     return (
         <>
-        <CreateGoal />
+        <CreateGoal refreshOnSubmit={refreshOnSubmit} />
         <h3>Goals</h3>
         <table className="goals-table">
             <thead>
