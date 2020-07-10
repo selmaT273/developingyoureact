@@ -75,7 +75,6 @@ export class AuthProvider extends React.Component {
       const payload = jwt.decode(token);
       if (payload) {
         if (payload.exp * 1000 < Date.now()) {
-          console.log('token expired');
           this.logout();
           return false;
         }
@@ -88,7 +87,6 @@ export class AuthProvider extends React.Component {
             userName: payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
           };
         }
-        console.log(user);
 
         this.setState({
           user,

@@ -22,18 +22,20 @@ export default function Goals(props) {
         <h3>Goals</h3>
         <table className="goals-table">
             <thead>
-                <td>
-                    Goal Name
-                </td>
-                <td>
-                    Start Date
-                </td>
-                <td>
-                    End Date
-                </td>
-                <td>
-                    Completed
-                </td>
+                <tr>
+                    <th>
+                        Goal Name
+                    </th>
+                    <th>
+                        Start Date
+                    </th>
+                    <th>
+                        End Date
+                    </th>
+                    <th>
+                        Completed
+                    </th>
+                </tr>
             </thead>
             <tbody>
             {data.map((goal) => (               

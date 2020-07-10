@@ -33,31 +33,31 @@ export default class CreateGoal extends React.Component{
             <>
                 <h3>Create Your Goal!</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="goalTitle">Title: 
+                    <label htmlFor="goalTitle">Title: 
                     <input 
                         name="goalTitle" 
                         placeholder="Goal title" />
                     </label>
     
-                    <label for="startDate">Start Date: 
+                    <label htmlFor="startDate">Start Date: 
                     <input 
                         name="startDate" 
                         type="datetime-local" />
                     </label>
     
-                    <label for="endDate">End Date: 
+                    <label htmlFor="endDate">End Date: 
                     <input 
                         name="endDate" 
                         type="datetime-local" />
                     </label>
     
-                    <label for="startValue">Start Value: 
+                    <label htmlFor="startValue">Start Value: 
                     <input 
                         name="startValue" 
                         placeholder="What's your current rate?" />
                     </label>
     
-                    <label for="targetValue">Target Value: 
+                    <label htmlFor="targetValue">Target Value: 
                     <input 
                         name="targetValue" 
                         placeholder="What's your desired rate?" />
