@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../contexts/auth';
 import Modal from '../components/modal';
+import './instance.scss';
 
 
 const CreateInstance = (props) => {
@@ -43,21 +44,21 @@ const CreateInstance = (props) => {
 
 return (
     <Modal  onClose={onClose}> <h2 className="instanceTitle">{goal.title}</h2>
-        <div>
+        <div className="createInstance">
             <form onSubmit={handleSubmit}>
 
                <label className="start" > 
-                   Start Time:
+                   Start Time : 
                <input name= "startTime"  type="datetime-local"/>
                </label>
 
                <label className="end"> 
-                   End Time:
+                   End Time : 
                <input name= "endTime" type="datetime-local"/>
                </label>
 
                <label className="commenting" > 
-                  Comment(s):
+                  Comment(s) : 
                <input name= "comment" type="text"/>
                </label>
 
