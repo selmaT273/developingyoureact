@@ -48,8 +48,8 @@ export default function Goals() {
             {data.map((goal) => (               
                 <tr key={goal.id}>
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
-                     <td>{Date(goal.startDate).slice(0, 15)}</td>
-                    <td>{Date(goal.endDate).slice(0, 15)}</td>
+                     <td>{new Date(goal.startDate).toLocaleDateString()}</td>
+                    <td>{new Date(goal.endDate).toLocaleDateString()}</td>
                     <td>
                         {(goal.completed === true) ? 
                         (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
