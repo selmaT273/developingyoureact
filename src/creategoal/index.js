@@ -5,7 +5,7 @@ import './creategoal.scss';
 export default class CreateGoal extends React.Component{
     static contextType = AuthContext;
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
         const { goalTitle, startDate, endDate, startValue, targetValue } = event.target.elements;
         const { user } = this.context;
@@ -17,7 +17,7 @@ export default class CreateGoal extends React.Component{
             targetValue: parseInt(targetValue.value),
         };
 
-        fetch('https://developingyouapi.azurewebsites.net/api/goals', {
+        await fetch('https://developingyouapi.azurewebsites.net/api/goals', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
