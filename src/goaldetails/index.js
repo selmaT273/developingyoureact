@@ -40,8 +40,8 @@ export default function GoalDetails(props) {
                 <tbody>         
                 <tr key={data.id}>
                     <td>{data.title}</td>
-                    <td>{Date(data.startDate).slice(0, 15)}</td>
-                    <td>{Date(data.endDate).slice(0, 15)}</td>
+                    <td>{new Date(data.startDate).toLocaleDateString()}</td>
+                    <td>{new Date(data.endDate).toLocaleDateString()}</td>
                     <td>
                         {(data.completed === true) ? 
                         (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
