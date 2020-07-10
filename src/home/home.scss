@@ -4,7 +4,7 @@
     background-color: #F9EBE0;
     box-shadow: 2px 3px 3px #5e6a74;
     display: grid;
-    grid-template-columns: 100px 150px auto 70px ;
+    grid-template-columns: 10px 90px 150px auto 70px ;
     grid-template-rows: 60px 60px 60px;
     margin-bottom: 15px;
     
@@ -14,8 +14,8 @@
     color: #5e6a74;
     display: inline;
     grid-row: 1 / 1 ;
-    grid-column: 1 / 4 ;
-    justify-self: center;
+    grid-column: 2 / 5 ;
+    
     align-self: center;
 }
 
@@ -25,7 +25,7 @@
 
 .progress-bar {
     grid-row: 2 / 2 ;
-    grid-column: 3 / 4 ;
+    grid-column: 4 / 5 ;
     justify-self: center;
 
 }
@@ -36,14 +36,14 @@
 
 .badges-wrapper {
     grid-row: 2 / 3 ;
-    grid-column: 1 / 4 ;
+    grid-column: 2 / 5 ;
 
 
 }
 
 .instance-button {
     grid-row: 1 / 2 ;
-    grid-column: 4 / 4 ;
+    grid-column: 5 / 5 ;
     justify-self: center;
     align-self: center;
 
