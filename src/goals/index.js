@@ -40,6 +40,12 @@ export default function Goals() {
                         End Date
                     </th>
                     <th>
+                        Start Value
+                    </th>
+                    <th>
+                        Target Value
+                    </th>
+                    <th>
                         Completed
                     </th>
                 </tr>
@@ -50,6 +56,8 @@ export default function Goals() {
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
                      <td>{Date(goal.startDate).slice(0, 15)}</td>
                     <td>{Date(goal.endDate).slice(0, 15)}</td>
+                    <td>{goal.startValue} hrs</td>
+                    <td>{goal.targetValue} hrs</td>
                     <td>
                         {(goal.completed === true) ? 
                         (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
