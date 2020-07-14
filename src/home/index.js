@@ -14,7 +14,7 @@ export default function Home() {
     const {user} = useAuth();
 
     if (!data) {
-        return <p class="mainLoader">Loading...</p>
+        return <p className="mainLoader">Loading...</p>
         }
 
         const activeGoals = data.filter((goal) => (goal.completed === false));
