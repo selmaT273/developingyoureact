@@ -4,8 +4,7 @@ import './goals.scss';
 import CreateGoal from '../creategoal';
 import {  Link } from 'react-router-dom';
 import useAuth from '../contexts/auth';
-
-
+import { If } from '../components/if';
 
 export default function Goals() {
     const {data, refresh} = useFetch('https://developingyouapi.azurewebsites.net/api/goals');
@@ -51,7 +50,8 @@ export default function Goals() {
                 </tr>
             </thead>
             <tbody>
-            {data.map((goal) => (               
+            {data.map((goal) => (
+                <If condition={goal.userId = user.id}>
                 <tr key={goal.id}>
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
                      <td>{new Date(goal.startDate).toLocaleDateString()}</td>
@@ -63,7 +63,8 @@ export default function Goals() {
                         (<img src={require("../img/check.png")} alt="Goal completed" height="30px" width="30px" />) : 
                         (<img src={require("../img/false.png")} alt="Goal not completed" height="30px" width="30px" />)}
                     </td>
-                </tr>        
+                </tr>
+                </If>
             ))}
             </tbody>
         </table>
