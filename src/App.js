@@ -4,12 +4,12 @@ import { Switch, Route } from 'react-router-dom';
 import Goals from './goals/index';
 
 import useTheme from './contexts/theme';
-
+import useAuth from './contexts/auth';
 import Header from './components/header';
 import Footer from './components/footer';
 import Login from './components/auth/login';
 import Home from './home/index';
-
+import { If, Unless } from './components/if';
 import GoalDetails from './goaldetails/index';
 
 import About from './aboutUs/index'
@@ -17,15 +17,20 @@ import About from './aboutUs/index'
 
 function App() {
   const { mode } = useTheme();
+  const { user } = useAuth();
 
   return (
     <>
     <div className={mode}>
       <Header />
-      <Login />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <If condition={user === null}>
+            <Login />
+          </If>
+          <If condition={user !== null}>
+            <Home />
+          </If>
         </Route>
         <Route exact path="/Goals">
           <Goals />

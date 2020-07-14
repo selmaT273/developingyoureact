@@ -10,8 +10,6 @@ export default class Register extends React.Component {
         const { userName, password, email } = e.target.elements;
         const response = await this.context.register(userName.value, password.value, email.value);
 
-        console.log(response);
-
         if (response === true){
             await this.context.login(userName.value, password.value);
         }
