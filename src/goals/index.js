@@ -51,7 +51,7 @@ export default function Goals() {
             </thead>
             <tbody>
             {data.map((goal) => (
-                <If condition={goal.userId = user.id}>
+                <If condition={goal.userId === user.id}>
                 <tr key={goal.id}>
                     <td key={goal.id}><Link exact to={`/Goals/${goal.id}`}> {goal.title}</Link></td>
                      <td>{new Date(goal.startDate).toLocaleDateString()}</td>
