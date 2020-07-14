@@ -68,7 +68,7 @@ export default class Login extends React.Component {
 
       <If condition={showRegister}>
         <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
-          <Register />
+          <Register toggle={this.toggleRegisterModal}/>
         </Modal>
       </If>
       </>
