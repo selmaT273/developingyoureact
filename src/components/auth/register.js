@@ -14,8 +14,9 @@ export default class Register extends React.Component {
             this.props.toggle();
             await this.context.login(userName.value, password.value);
         }
-
-        this.context.logout();
+        else {
+            this.context.logout();
+        }
     }
 
     render() {
