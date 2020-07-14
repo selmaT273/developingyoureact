@@ -1,19 +1,15 @@
 import React from 'react';
-
 import { Switch, Route } from 'react-router-dom';
 import Goals from './goals/index';
-
 import useTheme from './contexts/theme';
 import useAuth from './contexts/auth';
 import Header from './components/header';
 import Footer from './components/footer';
 import Login from './components/auth/login';
 import Home from './home/index';
-import { If, Unless } from './components/if';
+import { If } from './components/if';
 import GoalDetails from './goaldetails/index';
-
 import About from './aboutUs/index'
-
 
 function App() {
   const { mode } = useTheme();
