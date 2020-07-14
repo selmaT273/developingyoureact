@@ -43,8 +43,10 @@ export class AuthProvider extends React.Component {
         return result.ok;
       }
     }
-    this.context.logout();
+    else {
+      this.context.logout();
     return result.ok;
+    }
   }
 
   login = async (username, password) => {
