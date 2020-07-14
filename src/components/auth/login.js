@@ -24,12 +24,17 @@ export default class Login extends React.Component {
 
   static contextType = AuthContext;
 
-  handleSubmit = (e)  => {
+  handleSubmit = async (e)  => {
     e.preventDefault();
 
     const { username, password } = e.target.elements;
 
-    this.context.login(username.value, password.value);
+    if (username !== "" && password !== ""){
+      await this.context.login(username.value, password.value);
+    }
+    else {
+      this.toggleRegisterModal();
+    }
   }
 
   logoutSubmit = e => {
@@ -63,12 +68,12 @@ export default class Login extends React.Component {
         <br />
         <br />
         <button className="login-button">Log In</button>
-        <button className="register-button>" onClick={this.toggleRegisterModal}>Register</button> 
+        <button className="register-button>" type="button" onClick={this.toggleRegisterModal}>Register</button>
       </form>
 
       <If condition={showRegister}>
         <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
-          <Register />
+          <Register toggle={this.toggleRegisterModal}/>
         </Modal>
       </If>
       </>

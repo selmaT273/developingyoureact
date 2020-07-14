@@ -5,12 +5,10 @@ import { RadialBarChart, PolarAngleAxis, RadialBar } from 'recharts';
 export default function ProgressBar(props){
     const circleSize = 100;
     const { goal } = props;
-    console.log(goal);
     const startDate = new Date(goal.startDate);
     const endDate = new Date (goal.endDate);
     const currentDate = new Date();
     const progressCount = endDate - startDate;
-    console.log(progressCount);
     const data = [{
         value: progressCount && 100*Math.min(1, 1-(endDate - currentDate) / progressCount)
     }];

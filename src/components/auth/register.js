@@ -8,7 +8,15 @@ export default class Register extends React.Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const { userName, password, email } = e.target.elements;
-        this.context.register(userName.value, password.value, email.value);
+        const response = await this.context.register(userName.value, password.value, email.value);
+
+        if (response === true){
+            this.props.toggle();
+            await this.context.login(userName.value, password.value);
+        }
+        else {
+            this.context.logout();
+        }
     }
 
     render() {
