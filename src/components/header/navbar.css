@@ -141,6 +141,9 @@
         transition: 250ms;
     }
 
+    Button {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 340px){

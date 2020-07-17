@@ -5,6 +5,7 @@ import { MenuItems } from './menuitems';
 import { If } from '../if';
 import Modal from '../modal';
 import Register from '../auth/register';
+import { Button } from './register-button';
 
 class Navbar extends Component {
     state = { clicked: false }
@@ -36,7 +37,7 @@ class Navbar extends Component {
                 <Register toggle={this.toggleRegisterModal}/>
                 </Modal>
                 </If>
-                {/* <Button className="register-button"></Button> */}
+                <Button className="register-button">Register</Button>
             </nav>
         )
     }
