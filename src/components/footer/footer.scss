@@ -15,12 +15,19 @@ footer {
     left:0;
     bottom:0;
     right:0;    
-    margin-top: 10px;
     font-size: 10px;
 }
 
 .site-content {
-    margin-bottom: 5%;
-    margin-top: 0%;
+    margin-bottom: 3%;
+    margin-top: 1%;
+}
+
+@media screen and (max-width: 800px){
+
+    .site-content {
+        margin-top: 1%;
+        margin-bottom: 5%;
+    }
 }
 
