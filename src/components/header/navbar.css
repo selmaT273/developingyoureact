@@ -141,7 +141,7 @@
         transition: 250ms;
     }
 
-    Button {
+    .navbar-items Button {
         display: none;
     }
 }

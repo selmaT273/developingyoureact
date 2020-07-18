@@ -6,17 +6,43 @@ import { If } from '../if';
 import Modal from '../modal';
 import Register from '../auth/register';
 import { Button } from './register-button';
+import { AuthContext } from '../../contexts/auth';
 
 class Navbar extends Component {
-    state = { clicked: false }
+    state = { clicked: false };
+    state = {
+        showRegister: false,
+      };
+    
+  
+    toggleRegisterModal = () => {
+      this.setState(oldState => ({ showRegister: !oldState.showRegister}));
+    }
+  
 
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked})
     }
 
+    static contextType = AuthContext;
+
+  handleSubmit = async (e)  => {
+    e.preventDefault();
+
+    const { username, password } = e.target.elements;
+
+    if (username !== "" && password !== ""){
+      await this.context.login(username.value, password.value);
+    }
+    else {
+      this.toggleRegisterModal();
+    }
+  }
+
     render() {
         const {showRegister} = this.state;
 
+        
         return(
             <nav className="navbar-items">
                 <h1 className="navbar-logo">Developing You<i className="fas fa-child"></i></h1>
@@ -37,7 +63,7 @@ class Navbar extends Component {
                 <Register toggle={this.toggleRegisterModal}/>
                 </Modal>
                 </If>
-                <Button className="register-button">Register</Button>
+                <Button className="register-button" type="button" onClick={this.toggleRegisterModal}>Register</Button>
             </nav>
         )
     }
