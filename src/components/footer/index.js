@@ -8,7 +8,6 @@ export default function Footer() {
     return(
         <footer className="footer">
          <Link className="github" to={{ pathname: "https://www.github.com/selmaT273" }} target="_blank">@selmaT273</Link>
-          {/* <NavLink className="twitter" exact to="www.github.com/selmaT273">@selmaT273</NavLink> */}
           
         </footer>
     );
