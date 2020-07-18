@@ -68,7 +68,7 @@ export default class Login extends React.Component {
         <br />
         <br />
         <button className="login-button">Log In</button>
-        <button className="register-button>" type="button" onClick={this.toggleRegisterModal}>Register</button>
+        <button className="register-button" type="button" onClick={this.toggleRegisterModal}>Register</button>
       </form>
 
       <If condition={showRegister}>
