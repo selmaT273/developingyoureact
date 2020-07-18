@@ -6,6 +6,9 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    position: relative;
+    width: 100%;
+    top: 0;
 }
 
 .navbar-logo {
