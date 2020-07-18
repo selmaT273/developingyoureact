@@ -1,14 +1,30 @@
 footer {
-    color: #1e496d;
+    height: 3%;
+    background-color: rgb(199, 212, 232);
     text-align: center;
+    position:fixed;
+    left:0;
+    bottom:0;
+    right:0;    
     font-size: 10px;
-
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #F9EBE0;
-  }
+.site-content {
+    margin-bottom: 3%;
+    margin-top: 1%;
+}
+
+.github {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 800px){
+
+    .site-content {
+        margin-top: 1%;
+        margin-bottom: 5%;
+    }
+}
+

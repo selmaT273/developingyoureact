@@ -1,26 +1,26 @@
 import React from 'react';
 import { AuthContext } from '../../contexts/auth';
 import '../../index.scss';
-import Register from './register';
-import { If } from '../if';
-import Modal from '../modal';
+// import Register from './register';
+// import { If } from '../if';
+// import Modal from '../modal';
 // import GoalDetails from '../../goaldetails/index';
 
 
 
 
 export default class Login extends React.Component {
-  constructor() {
-    super();
+  //constructor() {
+  //  super();
 
-    this.state = {
-      showRegister: false,
-    };
-  }
+    // this.state = {
+    //   showRegister: false,
+    // };
+ // }
 
-  toggleRegisterModal = () => {
-    this.setState(oldState => ({ showRegister: !oldState.showRegister}));
-  }
+  // toggleRegisterModal = () => {
+  //   this.setState(oldState => ({ showRegister: !oldState.showRegister}));
+  // }
 
   static contextType = AuthContext;
 
@@ -45,7 +45,7 @@ export default class Login extends React.Component {
 
   render() {
 
-    const {showRegister} = this.state;
+    // const {showRegister} = this.state;
 
     const { user } = this.context;
 
@@ -68,14 +68,14 @@ export default class Login extends React.Component {
         <br />
         <br />
         <button className="login-button">Log In</button>
-        <button className="register-button>" type="button" onClick={this.toggleRegisterModal}>Register</button>
+        {/* <button className="register-button" type="button" onClick={this.toggleRegisterModal}>Register</button> */}
       </form>
 
-      <If condition={showRegister}>
+      {/* <If condition={showRegister}>
         <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
           <Register toggle={this.toggleRegisterModal}/>
         </Modal>
-      </If>
+      </If> */}
       </>
     )
   }
