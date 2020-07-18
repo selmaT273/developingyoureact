@@ -9,6 +9,7 @@ import { Button } from './register-button';
 import {LogoutButton} from '../header/logout-button';
 import { AuthContext } from '../../contexts/auth';
 
+
 class Navbar extends Component {
     state = { clicked: false };
     state = {
@@ -72,7 +73,7 @@ class Navbar extends Component {
                 <Register toggle={this.toggleRegisterModal}/>
                 </Modal>
                 </If>
-                <LogoutButton className="logout-button" type="button" onClick={this.toggleRegisterModal}>Logout</LogoutButton>
+                <LogoutButton className="logout-button" type="button" onClick={this.logoutSubmit}>Logout</LogoutButton>
             </nav>
           )
         }
