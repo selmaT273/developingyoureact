@@ -5,7 +5,7 @@ import { MenuItems } from './menuitems';
 import { If } from '../if';
 import Modal from '../modal';
 import Register from '../auth/register';
-import { Button } from './register-button';
+import { RegisterButton } from './register-button';
 import {LogoutButton} from '../header/logout-button';
 import { AuthContext } from '../../contexts/auth';
 
@@ -63,17 +63,15 @@ class Navbar extends Component {
                     {MenuItems.map((item, index) => {
                         return(
                             <li key={index}>
-                                <NavLink className={item.cName} exact to={item.url}>{item.title}</NavLink>
+                                <NavLink className={item.cName} exact to={item.url} >{item.title}</NavLink>
                             </li>
                         )
                     })}
+                    <li>
+                    <LogoutButton type="button" onClick={this.logoutSubmit}>Logout</LogoutButton>
+                    </li>
                 </ul>
-                <If condition={showRegister}>
-                <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
-                <Register toggle={this.toggleRegisterModal}/>
-                </Modal>
-                </If>
-                <LogoutButton className="logout-button" type="button" onClick={this.logoutSubmit}>Logout</LogoutButton>
+                
             </nav>
           )
         }
@@ -92,13 +90,16 @@ class Navbar extends Component {
                             </li>
                         )
                     })}
+                    <li>
+                    <If condition={showRegister}>
+                    <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
+                    <Register toggle={this.toggleRegisterModal}/>
+                    </Modal>
+                    </If>
+                    <RegisterButton type="button" onClick={this.toggleRegisterModal}>Register</RegisterButton>
+                    </li>
                 </ul>
-                <If condition={showRegister}>
-                <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
-                <Register toggle={this.toggleRegisterModal}/>
-                </Modal>
-                </If>
-                <Button className="register-button" type="button" onClick={this.toggleRegisterModal}>Register</Button>
+
             </nav>
         )
     }

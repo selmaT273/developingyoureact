@@ -14,10 +14,4 @@ export const MenuItems = [
         url: "/About",
         cName: 'nav-links'
     },
-    {
-        title: 'Register',
-        url: '#',
-        cName: 'nav-links-mobile'
-    }
-
 ]

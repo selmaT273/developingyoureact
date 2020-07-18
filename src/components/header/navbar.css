@@ -31,12 +31,14 @@
     width: 60vw;
     justify-content: end;
     margin-right: 1rem;
+    align-items: center;
+
 }
 
 .nav-links {
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
 }
 
 .nav-links:hover {
@@ -122,7 +124,7 @@
         font-size: 2rem;
     }
 
-    .nav-links-mobile {
+    .navbar-items Button {
         display: block;
         text-align: center;
         padding: 1.5rem;
@@ -135,15 +137,15 @@
         font-size: 1.5rem;
     }
 
-    .nav-links-mobile:hover {
+    .navbar-items Button:hover {
         background: rgb(114, 180, 200);
         color: white;
         transition: 250ms;
     }
 
-    .navbar-items Button {
+    /* .navbar-items Button {
         display: none;
-    }
+    } */
 }
 
 @media screen and (max-width: 340px){

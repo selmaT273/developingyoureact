@@ -13,12 +13,12 @@
     margin-left: 10px;
 }
 
-.btn:hover{
-    padding: 8px 20px;
+.btn:hover{ 
     transition: all 0.3s ease-out;
     background: #fff;
     color: #72b4c8;
     transition: 250ms;
+    
 }
 
 .btn--primary {

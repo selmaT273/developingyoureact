@@ -11,7 +11,7 @@ const sizes = [
     'btn--large'
 ]
 
-export const Button = ({
+export const RegisterButton = ({
     children,
     onClick,
     buttonStyle,
