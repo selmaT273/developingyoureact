@@ -1,12 +1,3 @@
-// footer {
-//     position: fixed;
-//     left: 0;
-//     bottom: 0;
-//     height: 3%;
-//     width: 100%;
-//     background-color: #F9EBE0;
-//   }
-
 footer {
     height: 3%;
     background-color: rgb(199, 212, 232);
@@ -21,6 +12,12 @@ footer {
 .site-content {
     margin-bottom: 3%;
     margin-top: 1%;
+}
+
+.github {
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
 }
 
 @media screen and (max-width: 800px){
