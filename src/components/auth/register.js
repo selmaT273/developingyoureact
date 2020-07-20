@@ -3,6 +3,7 @@ import { AuthContext } from '../../contexts/auth';
 import './register.css';
 import '../../index.scss';
 
+
 export default class Register extends React.Component {
     static contextType = AuthContext;
 
