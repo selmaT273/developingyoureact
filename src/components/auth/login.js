@@ -1,6 +1,7 @@
 import React from 'react';
 import { AuthContext } from '../../contexts/auth';
-import '../../index.scss';
+import '../auth/login.css';
+
 // import Register from './register';
 // import { If } from '../if';
 // import Modal from '../modal';
@@ -60,22 +61,28 @@ export default class Login extends React.Component {
     return (
       <>
       <form className="login-form" onSubmit={this.handleSubmit}>
-        <h3>Log in to start working on your goals!</h3>
-        <input className="login-username" placeholder="Username" name="username" />
-        <br />
-        <br />
-        <input className="login-password" placeholder="Password" type="password" name="password" />
-        <br />
-        <br />
-        <button className="login-button">Log In</button>
-        {/* <button className="register-button" type="button" onClick={this.toggleRegisterModal}>Register</button> */}
+        <div className="login-header">Login</div>
+          <div className="content">
+            <div className="login-image">
+              <img className="temp-login-image" alt="login" src={require('../../img/temp-login-image.png')} />            
+            </div>
+            <div className="login-section">
+              <div className="login-group">
+                <label htmlFor="username">Username</label>
+                <input className="login-username" placeholder="Username" name="username" />
+              </div>
+              <div className="login-group">
+                <label htmlFor="password">Password</label>
+                <input className="login-password" placeholder="Password" type="password" name="password" />
+              </div>
+            </div>
+          </div>
+          <div className="login-footer">
+            <button className="login-button">Log In</button>
+          </div>
+
       </form>
 
-      {/* <If condition={showRegister}>
-        <Modal title="RegisterModal" onClose={this.toggleRegisterModal}>
-          <Register toggle={this.toggleRegisterModal}/>
-        </Modal>
-      </If> */}
       </>
     )
   }
