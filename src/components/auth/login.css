@@ -82,7 +82,7 @@
 }
 
 .login-button:hover {
-    background-color: #BCD4E5;
+    background-color: rgb(199, 212, 232);
     color: white;
 }
 
