@@ -53,6 +53,7 @@
     font-weight: lighter;
     letter-spacing: 1px;
     margin-bottom: 0.25em;
+    margin: 0 auto;
 }
 
 .register-form button:hover {
