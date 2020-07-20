@@ -23,9 +23,13 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        width: 400px;
         height: 400px;
         margin: auto;
-        padding: 0;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 50px #555;
+        background-color: #fff;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
@@ -36,7 +40,6 @@
         .header {
           padding-left: 5px;
             align-items: center;
-            background: #F3E2D4;
             border-bottom: 1px solid #F3E2D4;
             display: flex;
             font-size: 1rem;
@@ -50,19 +53,17 @@
                 flex: 1;
             }
   
-            button {
-                background: #1e496d;
-                color: white;
+            i {
+                color: rgb(188, 212, 232);
                 cursor: pointer;
                 display: inline-block;
-                height: 100%;
-                line-height: 100%;
-                text-align: center;
-                margin-left: 500px;
+                margin-left: 510px;
+                margin-bottom: 10px;
+                
   
                 &:hover {
-                    background: #F3E2D4;
-                    color: black;
+                    background: white;
+                    color: rgb(188, 212, 232);
                 }
             }
         }

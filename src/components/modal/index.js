@@ -9,9 +9,9 @@ const Modal = props => {
         <div className="overlay">
             <div className="modal">
                 <div className="header">
-                    <button onClick={onClose}>
-                    Close
-                    </button>
+                    <div className="close" onClick={onClose}>
+                    <i className='fas fa-times'></i>
+                    </div>
                 </div>
                 <div className="content">
                     {children}
