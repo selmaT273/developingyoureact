@@ -74,16 +74,17 @@
     font-size: 20px;
     padding: 5px 20px;
     border: 0;
-    background-color: white;
-    color: #BCD4E5;
+    background-color: #BCD4E5;
+    color: white;
     border-radius: 3px;
     transition: all 250ms ease-in-out;
     cursor: pointer;
 }
 
 .login-button:hover {
-    background-color: rgb(199, 212, 232);
-    color: white;
+    background-color: white;
+    color: rgb(199, 212, 232);
+    outline: 1px solid rgb(199, 212, 232);
 }
 
 .login-button:focus {
