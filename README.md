@@ -2,10 +2,10 @@
 Developing You is a guided behavioral modification app that helps make the journey of achieving your personal goals more attainable. Created with evidence-based approaches such as S.M.A.R.T. (Specific Measurable Attainable Relevant and Timely) and positive reinforcement, this app is designed to make the process of reaching your goals more easily attainable and feel more rewarding.
 
 # Project Status
-This project is is currently in development. See reference to the original repository [here](https://github.com/Team-FIR3/developingyoureact).
+This project is is currently in development. See reference to the original repository [here](https://github.com/Team-FIR3/developingyoureact). 
 
 # Deployment
-The API for this project is currently deployed with Azure [here](https://developingyouapi.azurewebsites.net/).
+The API for this project is not currently deployed and is undergoing a transfer of ownership.
 
 # Planning
 ## Wireframes
